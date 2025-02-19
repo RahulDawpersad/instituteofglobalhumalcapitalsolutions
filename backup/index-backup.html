@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="keywords" content="">
+  <meta name="description"
+    content="DesignX: Your go-to for web development and graphic design. Founded and developed by Rahul Dawpersad, I bring your ideas to life with creativity and skill.">
+  <title>IGHCS | Institute Of Global Human Capital Solutions</title>
+  <!-- Preconnect to improve loading of external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://kit.fontawesome.com">
+
+  <!-- External Stylesheets -->
+  <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/assets/scss/module.css">
+
+  <!-- Preload important fonts or stylesheets -->
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    } */
+
+    nav {
+      background-color: #003366;
+      color: #fff;
+      font-family: "Poppins", serif;
+      position: relative;
+      z-index: 10;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar .menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .logo img {
+      width: 300px;
+      height: auto;
+      max-height: 300px;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 14px;
+      /* Reduced font size */
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    .menu li a:hover {
+      color: #b9b9b9;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      padding: 10px;
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown-toggle:hover+.dropdown-menu {
+      display: block;
+    }
+
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      list-style: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 300px;
+      /* Set a wider width for the dropdown */
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 8px 12px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #fff;
+      color: #007BFF;
+    }
+
+    .cta {
+      background-color: #1E90FF;
+      padding: 10px 30px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 10px;
+      /* Reduced font size */
+      text-decoration: none;
+      color: #fff;
+      margin-right: 5px;
+      width: 80px;
+    }
+
+    .cta:hover {
+      color: #1E90FF;
+      background-color: #0059ff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+      margin-left: auto;
+    }
+
+    .hamburger div {
+      background-color: #fff;
+      height: 3px;
+      width: 25px;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background-color: #003366;
+      box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+      z-index: 20;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .mobile-menu li {
+      margin: 15px 0;
+    }
+
+    .mobile-menu .dropdown-menu {
+      position: static;
+      padding-left: 15px;
+    }
+
+    .mobile-menu .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .mobile-menu .cta {
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .close-btn {
+      align-self: flex-end;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      color: #b9b9b9;
+    }
+
+
+    /* Hide the plus icon by default */
+    .plus-icon {
+      display: none;
+      margin-left: 5px;
+      font-size: 18px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1240px) {
+      .dropdown span {
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        padding: 0 0;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        margin-right: 2em;
+      }
+
+      .mobile-menu.open {
+        right: 0;
+      }
+
+      .menu li {
+        display: none;
+      }
+
+      .logo {
+        margin-right: 2em;
+      }
+
+      .navbar {
+        justify-content: flex-start;
+      }
+
+      .logo img {
+        margin-top: 30px;
+        width: 200px;
+        height: 200px;
+
+      }
+
+      .dropdown-menu {
+        /* min-width: 230px; */
+        display: none;
+      }
+
+      .dropdown-open .dropdown-menu {
+        display: block;
+      }
+
+      /* For smaller screens */
+      .menu li a {
+        font-size: 12px;
+        /* Smaller font size for mobile screens */
+      }
+
+      .dropdown-menu li a {
+        font-size: 12px;
+        /* Smaller font size for mobile dropdown */
+      }
+
+      .cta {
+        font-size: 12px;
+        /* Smaller font size for buttons on mobile */
+      }
+    }
+
+
+    /* Auth Buttons */
+    /* #auth-buttons {
+      margin-bottom: 20px;
+    } */
+
+    #auth-buttons button {
+      background: #1E90FF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 999;
+    }
+
+    #user-info {
+      display: none;
+      /* Hide by default */
+    }
+
+
+    /* User Icon */
+    .user-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .user-icon {
+      font-size: 24px;
+      /* background: white; */
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    /* Dropdown Menu */
+    .user-dropdown {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: white;
+      color: black;
+      padding: 50px;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      display: none;
+      text-align: left;
+    }
+
+    .user-dropdown h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .user-dropdown button {
+      background: #1E90FF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    /* Show Dropdown */
+    .show {
+      display: block;
+    }
+
+    #about h1 {
+      font-size: 1.5em;
+      color: #003366;
+    }
+
+
+    #about h1 span {
+      color: #007BFF;
+    }
+
+    #about img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ddd;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #about p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .email-form .btn-subscribe {
+      border-radius: 0;
+      width: 100%;
+      margin: 1em;
+    }
+
+    .validation-message {
+      width: 100%;
+      font-size: 0.9em;
+      display: flex;
+      height: auto;
+    }
+
+    .subscribe-error-message {
+      margin-top: 0.3em;
+      padding: 0 0.5em;
+    }
+
+    .subscribe-success-message {
+      margin-top: 0.3em;
+      padding: 0 0.5em;
+    }
+
+    .form-subheading {
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+
+    /* Hide the desktop auth buttons on mobile */
+    .desktop-auth {
+      display: block;
+      /* Visible on large screens */
+    }
+
+    .mobile-auth {
+      display: none;
+      /* Hidden on desktops */
+    }
+
+    /* Mobile Styling */
+    @media screen and (max-width: 1024px) {
+      .desktop-auth {
+        display: none;
+        /* Hide on tablets and phones */
+      }
+
+      .mobile-auth {
+        display: flex;
+        /* Show inside the mobile menu */
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <header class="header" id="header">
+    <nav>
+      <div class="navbar">
+        <a href="#" class="logo">
+          <img src="/assets/image/Blue_and_White_Modern_Company_Logo-removebg-preview.png" alt="Logo" />
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="test.html">Test</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li class="dropdown">
+            <span class="dropdown-toggle">Services</span>
+            <ul class="dropdown-menu">
+              <li><a href="programme-director.html">Programme Director & Facilitation of Strategic Workshops</a></li>
+              <li><a href="strategic-conferences.html">Strategic Conferences</a></li>
+              <li><a href="human-capital-strategies.html">Human Capital Strategies and Implementation</a></li>
+              <li><a href="business-process-reengineering.html">Business Process Re-engineering</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <span class="dropdown-toggle">Conferences</span>
+            <ul class="dropdown-menu">
+              <li><a href="calendar.html">Conference Calendar</a></li>
+            </ul>
+          </li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Authentication Buttons for Larger Screens -->
+        <div id="auth-buttons" class="desktop-auth">
+          <button class="cta" onclick="window.location.href='/login.html'">Login</button>
+          <button class="cta" onclick="window.location.href='/register.html'">Register</button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li class="dropdown">
+            <span class="dropdown-toggle">Services</span>
+            <ul class="dropdown-menu">
+              <li><a href="programme-director.html">Programme Director & Facilitation of Strategic Workshops</a></li>
+              <li><a href="strategic-conferences.html">Strategic Conferences</a></li>
+              <li><a href="human-capital-strategies.html">Human Capital Strategies and Implementation</a></li>
+              <li><a href="business-process-reengineering.html">Business Process Re-engineering</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <span class="dropdown-toggle">Conferences</span>
+            <ul class="dropdown-menu">
+              <li><a href="calendar.html">Conference Calendar</a></li>
+            </ul>
+          </li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+          <!-- Authentication Buttons for Mobile Menu -->
+          <div id="auth-buttons" class="mobile-auth">
+            <button class="cta" onclick="window.location.href='/login.html'">Login</button>
+            <button class="cta" onclick="window.location.href='/register.html'">Register</button>
+          </div>
+        </ul>
+      </div>
+      <!-- User Icon & Dropdown -->
+      <div id="user-info" class="user-container">
+        <i class="fa-solid fa-user user-icon"></i>
+        <div class="user-dropdown">
+          <h3 id="username-display"></h3>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <!-- Swiper/Carousel Start -->
+  <section class="main swiper mySwiper" id="home">
+    <div class="wrapper swiper-wrapper">
+      <div class="slide swiper-slide">
+        <img src="/assets/image/SliderOne.jpg" alt="" class="image" />
+        <div class="image-data">
+          <h1 class="text">Institute of Global Human Capital Solutions (IGHCS)</h1>
+          <p class="text-two">
+            Empowering Minds, Transforming Futures, Driving Excellence <br /> in Human Capital Development
+            Worldwide
+          </p>
+          <!-- <a href="https://rahuldawpersad-webfolio.netlify.app/">
+                    <button class="btn-portfolio">View Portfolio</button>
+                </a> -->
+          <!-- Authentication routes -->
+          <!-- <div id="auth-buttons">
+            <button onclick="window.location.href='/register.html'">Register</button>
+            <button onclick="window.location.href='/login.html'">Login</button>
+          </div> -->
+
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <!-- <img src="img/carousel3.jpg" alt="" class="image" /> -->
+        <img src="/assets/image/Leonardo_Kino_XL_diverse_meeting_of_different_races_board_1.jpg" alt="" class="image" />
+        <div class="image-data">
+          <h1 class="text heading-two">Unifying Global Talent for Organizational Success</h1>
+          <p class="text-two">
+            Globally Working Together as One: <br> Empowering Organizations Through Human Capital
+          </p class="text-two">
+          <!-- Authentication routes -->
+          <!-- <div id="auth-buttons">
+            <button onclick="window.location.href='/register.html'">Register</button>
+            <button onclick="window.location.href='/login.html'">Login</button>
+          </div> -->
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="/assets/image/SliderThree.jpg" alt="" class="image" />
+        <div class="image-data">
+          <h1 class="text">Innovative Solutions for a Thriving Workforce</h1>
+          <p class="text-two">
+            Transforming Human Capital Strategies to Drive Global Impact
+          </p class="text-two">
+          <!-- Authentication routes -->
+          <!-- <div id="auth-buttons">
+            <button onclick="window.location.href='/register.html'">Register</button>
+            <button onclick="window.location.href='/login.html'">Login</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <div class="swiper-pagination"></div>
+  </section>
+  <!-- Swiper/Carousel End -->
+
+  <!-- About Start -->
+  <div class="container-fluid py-5" id="about">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <!-- Left Section -->
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+          <h1 class="mb-4 heading">About Us</h1>
+          <p class="mb-4">
+            At the Institute of Global Human Capital Solutions (IGHCS), we are dedicated to advancing the
+            field of human capital management through cutting-edge research, innovative solutions, and
+            strategic guidance. Our expertise enables organizations and individuals worldwide to thrive in
+            an ever-changing global economy.
+          </p>
+          <h1 class="mb-3">Our Mission</h1>
+          <p class="mb-4">
+            To advance the science and practice of human capital management by providing research-driven
+            insights, innovative solutions, and strategic guidance to organizations and individuals across
+            the globe.
+          </p>
+          <h1 class="mb-3">Our Vision</h1>
+          <p class="mb-4">
+            To empower a global community of human capital professionals to drive business success, create
+            social impact, and achieve individual fulfillment through advanced research, innovative
+            solutions, and transformative strategic partnerships.
+          </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <video autoplay loop muted class="img-fluid">
+            <source src="/assets/video/vid1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Service Start -->
+  <div class="container-xxl py-5" id="service">
+    <div class="container">
+      <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+        <h1 class="fs-5 fw-bold service-main-heading">OUR OBJECTIVES</h1>
+        <h4 class="display-5 mb-5 service-heading">PAVING THE WAY FOR HUMAN CAPITAL EXCELLENCE</h4>
+      </div>
+      <div class="row g-4">
+        <!-- Objective 1: Advance Human Capital Knowledge -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp service-bg" data-wow-delay="0.1s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="#" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Advance Human Capital Knowledge</h4>
+              <p class="mb-4 text-start">
+                Conduct research, gather insights, and develop practical solutions to advance the field
+                of human capital management.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objective 2: Foster Global Community -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="img/services/community.jpg" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Foster Global Community</h4>
+              <p class="mb-4 text-start">
+                Establish a network of scholars, practitioners, and leaders to share knowledge, best
+                practices, and innovative solutions.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objective 3: Drive Organisational Excellence -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="img/services/excellence.jpg" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Drive Organisational Excellence</h4>
+              <p class="mb-4 text-start">
+                Provide advisory services, training, and development programmes to help organisations
+                optimize their human capital strategies.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objective 4: Promote Social Responsibility -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="img/services/social_responsibility.jpg" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Promote Social Responsibility</h4>
+              <p class="mb-4 text-start">
+                Encourage organisations to adopt socially responsible human capital practices that
+                benefit employees, communities, and the environment.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operational Objective 1: Develop Research-Based Solutions -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="img/services/research_solutions.jpg" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Develop Research-Based Solutions</h4>
+              <p class="mb-4 text-start">
+                Conduct studies, surveys, and analyses to identify best practices and innovative
+                solutions in human capital management.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operational Objective 2: Create Professional Development Programmes -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item rounded d-flex h-100">
+            <div class="service-img rounded">
+              <img class="img-fluid" src="img/services/professional_development.jpg" alt="" />
+            </div>
+            <div class="service-text rounded p-5">
+              <h4 class="mb-3 text-start">Create Professional Development Programmes</h4>
+              <p class="mb-4 text-start">
+                Design and deliver training, certification, and executive education programmes for human
+                capital professionals.
+              </p>
+              <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Service -->
+
+  <!-- Feature Start/ Why Choose Us -->
+  <div class="container-fluid feature pt-5" id="feature">
+    <div class="container pt-5">
+      <div class="row g-5">
+        <div class="col-lg-6 align-self-center mb-md-5 pb-md-5 wow fadeIn" data-wow-delay="0.3s">
+          <div class="feature-heading">WHY CHOOSE US</div>
+          <h1 class="mb-4 sub-header">
+            Institute of Global Human Capital Solutions
+          </h1>
+          <p class="mb-4">
+            Empowering individuals and organizations with strategic human capital solutions, ensuring
+            growth, sustainability, and global impact.
+
+          </p>
+          <div class="d-flex align-items-center mb-3 feature-wrapper">
+            <div class="btn-sm-square rounded-circle me-3">
+              <i class="fa fa-check icon-check"></i>
+            </div>
+            <span class="icon-box">Innovative solutions for workforce transformation.</span>
+          </div>
+          <div class="d-flex align-items-center mb-3 feature-wrapper">
+            <div class="btn-sm-square rounded-circle me-3">
+              <i class="fa fa-check icon-check"></i>
+            </div>
+            <span class="icon-box">Tailored strategies for leadership and talent development.</span>
+          </div>
+          <div class="d-flex align-items-center mb-3 feature-wrapper">
+            <div class="btn-sm-square rounded-circle me-3">
+              <i class="fa fa-check icon-check"></i>
+            </div>
+            <span class="icon-box">Driving global impact through people-centric solutions.</span>
+          </div>
+        </div>
+        <div class="col-lg-6 align-self-end text-center text-md-end wow fadeIn" data-wow-delay="0.5s">
+          <img class="img-fluid feature-img" src="/assets/image/conference_mockup.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Feature End -->
+
+  <!-- values Start -->
+  <section class="values-section" id="our-values">
+    <div class="container">
+      <div class="outer-box">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-description">At the Institute of Global Human Capital Solutions, our values
+              guide everything we do, driving our mission to foster excellence in human capital
+              development worldwide.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-12 value-box text-center">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i> <!-- Replace with your preferred icon -->
+            </div>
+            <h3 class="value-title">Innovation</h3>
+            <p class="value-description">Embracing creativity, experimentation, and continuous learning to
+              drive human capital excellence.</p>
+          </div>
+          <div class="col-md-4 col-sm-12 value-box text-center">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i> <!-- Replace with your preferred icon -->
+            </div>
+            <h3 class="value-title">Collaboration</h3>
+            <p class="value-description">Fostering global connections, partnerships, and knowledge-sharing
+              to advance the field.</p>
+          </div>
+          <div class="col-md-4 col-sm-12 value-box text-center">
+            <div class="value-icon">
+              <i class="fas fa-users"></i> <!-- Replace with your preferred icon -->
+            </div>
+            <h3 class="value-title">Inclusivity</h3>
+            <p class="value-description">Creating equitable opportunities and ensuring diverse perspectives
+              are acknowledged, respected, and celebrated in all human capital initiatives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Values End -->
+
+  <!-- Our Approach -->
+  <section class="container-fluid py-5" id="our-approach">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image Section -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="/assets/image/conference_image1.jpg" alt="Strategic Approach Image" class="img-fluid">
+        </div>
+
+        <!-- Text Section -->
+        <div class="col-lg-6">
+          <h2 class="mb-4">Our Approach</h2>
+          <p>
+            At the Institute of Global Human Capital Solutions, we prioritize empowering organizations by
+            implementing
+            cutting-edge Human Capital Strategies. Our areas of focus include Talent and Performance
+            Management,
+            Employee Engagement, Wellness Management, and HC Data Analytics. These strategies foster
+            innovation,
+            productivity, and excellence in the workforce.
+          </p>
+          <p>
+            Our expertise is complemented by hosting impactful conferences on topics such as Women
+            Leadership,
+            Human Capital Strategy, and Men’s Health, creating platforms for industry leaders to exchange
+            ideas and
+            best practices.
+          </p>
+          <p>
+            With extensive experience and a commitment to excellence, our founder ensures that organizations
+            are
+            equipped to achieve sustainable growth and thrive in today’s competitive landscape. Together, we
+            unlock
+            the potential of your human capital to drive lasting success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Of Our Approach -->
+
+  <!-- Get Event Updates -->
+  <div class="container-fluid contact-section py-5" id="contact">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="contact-heading">Get Event Updates</h2>
+          <p class="contact-subtext">
+            Subscribe for updates on upcoming HR conferences and exclusive networking events!
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-4 form-subheading">Subscribe to Our Newsletter</h2>
+          <form id="subscribeForm" class="email-form">
+            <div class="input-group">
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+          <p id="message" class="validation-message mt-3"></p>
+          <!-- <div id="confirmationMessage" class="mt-3" style="display: none;">
+            <h4>Thank you for subscribing!</h4>
+            <p>Please check your email for a welcome message from us.</p>
+          </div>
+          <div id="loadingIndicator" class="mt-3" style="display: none;">
+            <p>Processing your request, please wait...</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Get Event Updates -->
+
+  <!-- Testimonials Section -->
+  <div class="testimonial-section" id="testimonials">
+    <div class="col-md-6 text-center">
+      <h2 class="contact-heading">Testimonials</h2>
+      <p class="contact-subtext">
+        What Our Clients Say?
+      </p>
+    </div>
+    <div class="parent-container">
+      <button id="prevBtn" class="nav-button"><i class="fa-solid fa-chevron-left"></i></button>
+      <blockquote class="responsive-quote" id="testimonial-1">
+        <p>I had the privilege of working with Juggie Moodley at eThekwini Municipality, where I witnessed his
+          exceptional strategy development and leadership abilities. Juggie played a key role in shaping our
+          Human Capital strategy through interactive workshops and strategic planning. His deep knowledge of
+          municipal governance and his transformative leadership style enabled him to navigate complex
+          challenges, foster collaboration, and empower teams. He was instrumental in developing effective
+          strategies, improving human capital, and driving organizational change. I highly recommend Juggie
+          for any organization seeking a strategic leader with outstanding skills.</p>
+        <br />
+        <cite>&mdash; Ronika Naidoo <br>
+          Human Capital Information Systems<br>
+          Ethekwini Municipality</cite>
+      </blockquote>
+      <blockquote class="responsive-quote" id="testimonial-2">
+        <p>Had the pleasure of working with Juggie Moodley and can confidently say he is an exceptional
+          strategist. He excels at analyzing complex challenges, identifying opportunities, and crafting
+          tailored solutions. Juggie’s collaborative approach, deep understanding of business dynamics, and
+          ability to communicate complex ideas clearly ensure alignment across all levels of the organization.
+          His forward-thinking mindset and attention to detail have led to significant improvements in
+          strategic direction, operational efficiency, and overall success. I highly recommend Juggie Moodley
+          for anyone seeking a top-tier consultant who transforms challenges into opportunities.</p>
+        <br />
+        <cite>&mdash; Emma Caruth</cite>
+      </blockquote>
+      <!-- More Testimonials -->
+      <!-- <blockquote class="responsive-quote" id="testimonial-3">
+              <p>Testimonial 3 content goes here...</p>
+              <cite>&mdash; Yet Another User</cite>
+          </blockquote> -->
+      <button id="nextBtn" class="nav-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <!-- End Testimonials Section -->
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-cta pt-5 pb-5">
+        <div class="row">
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <div class="cta-text">
+                <h4>Find us</h4>
+                <span>27 Croton Street, Unit 9 Croton Crest, Brindhaven, Verulam, 4339</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <div class="cta-text">
+                <h4>Call us</h4>
+                <span>Juggie Moodley: +27 84 956 2500</span> <br>
+                <!-- <span>Natasha Dadoo: +27 74 028 6936</span> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <div class="cta-text">
+                <h4>Mail us</h4>
+                <span>ighcs@yahoo.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content pt-5 pb-5">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 mb-50">
+            <div class="footer-widget">
+              <div class="footer-logo">
+                <a href="index.html"><img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png" class="img-fluid"
+                    alt="logo"></a>
+              </div>
+              <div class="footer-text">
+                <p>"We Deliver actionable,
+                  objective insight to executives and their teams".</p>
+              </div>
+              <div class="footer-social-icon">
+                <span>Follow us</span>
+                <a href="#"><i class="fa-brands fa-facebook facebook-bg"></i></a>
+                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+              </div>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+            <div class="footer-widget">
+              <div class="footer-widget-heading">
+                <h3>Links</h3>
+              </div>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Conference Calendar</a></li>
+                <li><a href="#">Expert Team</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+            <div class="footer-widget footer-widget-two">
+              <div class="footer-widget-heading">
+                <h3>IGHCS Services</h3>
+              </div>
+              <ul class="ighcs-services-link">
+                <li><a href="#">Programme Director and Facilitation of Strategic Workshops</a></li>
+                <li><a href="#">Strategic Conferences</a></li>
+                <li><a href="#">Crafting of Human Capital Strategies and Implementation</a></li>
+                <li><a href="#">Re-engineering Business Processes aligned to business needs</a></li>
+                <li><a href="#">Change Management Services</a></li>
+                <li><a href="#">Coaching and Mentoring</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+            <div class="copyright-text">
+              <p>Copyright &copy; IGHCS 2025, All Right
+                Reserved. Developed By<a href="https://www.rahuldawpersad.com" target="_blank">
+                  DesignX</a></p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+            <div class="footer-menu">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Policy</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--End Of Footer -->
+
+  <!-- Subscribe Popup -->
+  <div class="subscribe-popup" id="subscribePopup">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <div class="popup-content">
+      <h2>Stay Updated!</h2>
+      <p>Subscribe to our newsletter for the latest updates and offers.</p>
+      <button class="subscribe-btn" id="subscribeBtn" onclick=btnSubscribe();>Subscribe Now</button>
+    </div>
+  </div>
+  <!-- End of Subscribe Popup -->
+
+
+  <!-- Back to Top -->
+  <button id="backToTopBtn" class="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/carousel.js"></script>
+  <script src="/assets/js/subscribe.js"></script>
+  <script src="/assets/js/testimonial.js"></script>
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="js/jquery-3.6.1.min.js" defer></script>
+  <script>
+    // Fetch user information from sessionStorage
+    window.onload = function () {
+      const user = sessionStorage.getItem('username');
+      const authButtons = document.getElementById('auth-buttons');
+      const userInfo = document.getElementById('user-info');
+      const usernameDisplay = document.getElementById('username-display');
+
+      if (user) {
+        // Show user icon and dropdown, hide auth buttons
+        usernameDisplay.innerText = user;
+        userInfo.style.display = 'inline-block';
+        authButtons.style.display = 'none';
+      } else {
+        // Hide user icon if not logged in
+        userInfo.style.display = 'none';
+      }
+    };
+
+    // Toggle dropdown menu
+    document.querySelector('.user-icon').addEventListener('click', function () {
+      document.querySelector('.user-dropdown').classList.toggle('show');
+    });
+
+    // Logout function
+    function logout() {
+      sessionStorage.removeItem('username');
+      window.location.href = '/';  // Redirect to homepage
+    }
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function (event) {
+      if (!event.target.closest('.user-container')) {
+        document.querySelector('.user-dropdown').classList.remove('show');
+      }
+    });
+
+    // Close menu on window resize if menu is open
+
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('open');
+    }
+
+    // Create reference to the button
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    // Show button when scrolling down
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+
+    // Scroll back to the top when the button is clicked
+    backToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+  </script>
+</body>
+
+</html>

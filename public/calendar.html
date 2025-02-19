@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="#" />
+    <meta name="author" content="AlexaTheme" />
+    <title>IGHCS | CONFERENCE CALENDAR</title>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+    <style>
+        /* Your existing styles here... */
+    </style>
+</head>
+
+<body>
+    <section class="service-section bg-grey padding" id="services">
+        <div class="calendar-container">
+            <div class="sidebar">
+                <h3>Filter by Type</h3>
+                <select id="monthSelector">
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                </select>
+                <ul>
+                    <li>
+                        <button onclick="filterEvents('business')">Business</button>
+                    </li>
+                    <li><button onclick="filterEvents('tech')">Tech</button></li>
+                    <li>
+                        <button onclick="filterEvents('education')">Education</button>
+                    </li>
+                    <li><button onclick="filterEvents('all')">Show All</button></li>
+                </ul>
+            </div>
+            <div class="events" id="eventsContainer">
+                <!-- Events will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="registerModal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h4 id="eventName"></h4>
+            <form id="registerForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>

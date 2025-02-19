@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <title>IGHCS | SIGN UP</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Allura&family=Sacramento&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Parisienne&family=Satisfy&family=Zilla+Slab&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", serif;
+    }
+
+    body {
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    } */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    form {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    .image-container {
+      flex: 1;
+      text-align: center;
+      margin-right: 5em;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+
+      .image-container {
+        margin: 0 0 0 0;
+      }
+
+      .image-container img {
+        max-width: 300px;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      /* margin-bottom: 5px; */
+      margin-top: 1em;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      margin: 0.4em 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    input[type=password],
+    input[type=text] {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block;
+      font-size: 18px;
+      margin: 5px 0px 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .show-password input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .show-password label {
+      font-size: 0.8em;
+      margin: 5px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 1em 0;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:enabled {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .message {
+      text-align: center;
+      padding: 10px;
+      /* margin-top: 10px; */
+      /* margin: 1em 0; */
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      margin: 1em 0;
+    }
+
+    .error {
+      background-color: crimson;
+    }
+
+    .success {
+      background-color: teal;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 150px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+
+    .password-rules {
+      margin-top: 10px;
+      font-size: 14px;
+      list-style: none;
+      padding: 0;
+      display: none;
+    }
+
+    .password-rules li {
+      color: #666;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-rules li.valid {
+      color: teal;
+      text-decoration: line-through;
+    }
+
+    .password-rules li::before {
+      content: "❌";
+      margin-right: 8px;
+      color: crimson;
+    }
+
+    .password-rules li.valid::before {
+      content: "✔️";
+      color: teal;
+    }
+
+    .label-container {
+      display: flex;
+      margin: -0.2em 0;
+      padding: 0;
+    }
+
+    .label-container .email-icon,
+    .user-icon,
+    .pass-icon {
+      margin: 1.1em 0;
+    }
+
+    .signup-text {
+      color: #003366;
+      margin: auto;
+      font-size: 2.3em;
+      font-weight: 100;
+      animation: lights 5s 750ms linear infinite;
+      /* font-family: 'Satisfy', cursive; */
+      /* font-family: 'Great Vibes', cursive; */
+      font-family: 'Lobster', cursive;
+
+    }
+
+    .signup-image {
+      width: 100%;
+      max-width: 200px;
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideIn 1s ease-in-out forwards;
+    }
+
+
+    .text-gradient,
+    .text-gradient>* {
+      background: linear-gradient(to right, crimson, blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .signup-footer {
+      font-size: 0.9em;
+    }
+
+    .login-link {
+      text-decoration: none;
+      color: #0056B3;
+      cursor: pointer;
+    }
+
+    .show-password .showText{
+      margin-top: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- <img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png" alt="Logo" class="logo"> -->
+    <div class="image-container">
+      <img src="login.svg" class="signup-image" alt="Sign Up Illustration">
+    </div>
+
+    <form action="/register" method="POST" id="registerForm">
+      <h2 class="signup-text text-gradient">Sign Up</h2>
+      <div id="message-container"></div>
+      <div class="label-container">
+        <img src="user-icon.gif" class="user-icon" width="20px" height="20px" alt="">
+        <label for="username" class="text-gradient">Username:</label>
+      </div>
+      <input type="text" id="username" name="username" required>
+
+      <div class="label-container">
+        <img src="email-marketing.gif" class="email-icon" width="20px" height="20px" alt="">
+        <label for="email" class="text-gradient">Email</label>
+      </div>
+      <input type="email" id="email" name="email" required>
+
+      <div class="label-container">
+        <img src="password-icon.gif" class="pass-icon" width="20px" height="20px" alt="">
+        <label for="password" class="text-gradient">Password:</label>
+      </div>
+      <input type="password" id="password" name="password" required>
+      <!-- Show/Hide password functionality -->
+      <div class="show-password">
+        <input type="checkbox" class="showPassword" id="showPassword">
+        <label for="showPassword" class="showText text-gradient">Show password</label>
+      </div>
+      <!-- Password Rules/Regex -->
+      <ul class="password-rules" id="passwordRules">
+        <li id="length">At least 8 characters</li>
+        <li id="letter">At least one letter</li>
+        <li id="number">At least one number</li>
+        <li id="special">At least one special character (!@#$%^&*)</li>
+      </ul>
+
+
+
+      <button type="submit" disabled>Sign Up</button>
+      <p class="signup-footer">Already have an Account? <a href="/login.html" class="login-link">Login</a></p>
+    </form>
+
+
+  </div>
+
+  <script>
+    const messageContainer = document.getElementById('message-container');
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const passwordRules = document.getElementById('passwordRules');
+    const registerForm = document.getElementById('registerForm');
+    const submitButton = document.querySelector('button[type="submit"]');
+
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    const rules = {
+      length: document.getElementById('length'),
+      letter: document.getElementById('letter'),
+      number: document.getElementById('number'),
+      special: document.getElementById('special')
+    };
+
+    let isEmailValid = false;
+    let isPasswordValid = false;
+    let isUsernameValid = false;
+
+    emailInput.addEventListener('input', validateEmail);
+    passwordInput.addEventListener('input', validatePassword);
+    usernameInput.addEventListener('input', validateUsername);
+
+    function validateEmail() {
+      const emailValue = emailInput.value;
+      clearPreviousMessages('email');
+
+      if (!emailPattern.test(emailValue)) {
+        showMessage('Invalid email format', 'error', 'email');
+        isEmailValid = false;
+      } else {
+        showMessage('Valid email', 'success', 'email');
+        isEmailValid = true;
+      }
+
+      enableSubmitButton();
+    }
+
+    function validatePassword() {
+      const password = passwordInput.value;
+      let isValid = true;
+
+      if (password.length >= 8) {
+        rules.length.classList.add('valid');
+      } else {
+        rules.length.classList.remove('valid');
+        isValid = false;
+      }
+
+      if (/[A-Za-z]/.test(password)) {
+        rules.letter.classList.add('valid');
+      } else {
+        rules.letter.classList.remove('valid');
+        isValid = false;
+      }
+
+      if (/\d/.test(password)) {
+        rules.number.classList.add('valid');
+      } else {
+        rules.number.classList.remove('valid');
+        isValid = false;
+      }
+
+      if (/[!@#$%^&*]/.test(password)) {
+        rules.special.classList.add('valid');
+      } else {
+        rules.special.classList.remove('valid');
+        isValid = false;
+      }
+
+      isPasswordValid = isValid;
+      enableSubmitButton();
+    }
+
+    function validateUsername() {
+      isUsernameValid = usernameInput.value.trim().length > 0;
+      enableSubmitButton();
+    }
+
+    passwordInput.addEventListener('input', () => {
+      passwordRules.style.display = passwordInput.value.length > 0 ? 'block' : 'none';
+      validatePassword();
+    });
+
+    function showMessage(message, type, field) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', type);
+      messageDiv.textContent = message;
+
+      if (field === 'email') {
+        messageContainer.appendChild(messageDiv);
+      } else if (field === 'password') {
+        passwordInput.parentElement.appendChild(messageDiv);
+      }
+    }
+
+    function clearPreviousMessages(field) {
+      if (field === 'email') {
+        messageContainer.innerHTML = '';
+      } else if (field === 'password') {
+        passwordInput.parentElement.querySelectorAll('.message').forEach(msg => msg.remove());
+      }
+    }
+
+    function enableSubmitButton() {
+      submitButton.disabled = !(isUsernameValid && isEmailValid && isPasswordValid);
+    }
+
+    // Show password toggle
+    document.getElementById('showPassword').onclick = function () {
+      document.getElementById('password').type = this.checked ? "text" : "password";
+    };
+
+    // Function to get query parameters from the URL
+    function getQueryParam(param) {
+      return new URLSearchParams(window.location.search).get(param);
+    }
+
+    // Display error message if it exists in the URL
+    window.onload = function () {
+      const errorMessage = getQueryParam('error');
+      if (errorMessage) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', 'error');
+        messageDiv.textContent = errorMessage;
+        messageContainer.appendChild(messageDiv);
+      }
+    };
+
+  </script>
+</body>
+
+</html>
+
+
+
+
+!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+  <h2>User Registration</h2>
+  <form action="/register" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+</script>
+</body>
+</html> -->

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Conferences | Services</title>
+    <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Allura&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Parisienne&family=Satisfy&family=Zilla+Slab&display=swap"
+        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/strategic-conference.css">
+</head>
+
+<body>
+
+       <!-- Navigation Bar -->
+       <div class="navbar">
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="IGHCS_LOGO_2-removebg-Transparent.png" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="hamburger" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Business Partners</a>
+            <a href="index.html">Testimonials</a>
+
+            <!-- Services Dropdown -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Services</span>
+                <div class="services-dropdown-menu">
+                    <a href="programmedirector.html">Programme Director & Facilitation of Strategic Workshops</a>
+                    <a href="strategiconference.html">Strategic Conferences</a>
+                    <a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                </div>
+            </div>
+
+            <!-- <a href="about.html">Conferences</a> -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Conference</span>
+                <div class="services-dropdown-menu">
+                    <a href="service2.html">Conference Calendar</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="auth-section" id="auth-section">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='register.html'">Sign Up</button>
+        </div>
+
+        <div class="user-menu" id="user-menu">
+            <i class="fas fa-user-circle user-icon" onclick="toggleDropdown()"></i>
+            <div class="dropdown" id="dropdown-menu">
+                <p id="username-display"></p>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Sidebar for Mobile -->
+        <div class="sidebar" id="sidebar">
+            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Business Partners</a>
+            <a href="index.html">Testimonials</a>
+            <!-- <a href="services.html">Services</a> -->
+            <!-- Services Dropdown -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Services</span>
+                <div class="services-dropdown-menu">
+                    <a href="programmedirector.html">Programme Director & Facilitation of Strategic Workshops</a>
+                    <a href="strategiconference.html">Strategic Conferences</a>
+                    <a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                </div>
+            </div>
+            <div class="services-dropdown-container">
+                <span class="services-link">Conference</span>
+                <div class="services-dropdown-menu">
+                    <a href="service2.html">Conference Calendar</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <section class="about-us">
+        <div class="container">
+            <div class="row align-items-center">
+
+
+                <!-- Text Column -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="text">
+                        <h2><span style="color: #0059ff;">IGHCS</span> Services</h2>
+                        <h5>Strategic Conferences</h5>
+                        <p>The Strategic Human Capital Conferences hosted by IGHCS bring together leaders and
+                            professionals to discuss and shape the future of Human Capital Management. These conferences
+                            provide a platform for knowledge-sharing, strategic planning, and networking, with a focus
+                            on emerging trends, technologies, and strategies that drive business success.</p>
+                        <p>Key offerings include expert speakers, interactive workshops, and networking opportunities to
+                            foster collaboration and relationship-building. Participants gain practical knowledge
+                            through hands-on workshops, case studies, and discussions on aligning human capital
+                            strategies with business goals. Topics also cover the latest trends and technologies that
+                            impact human capital management.</p>
+                        <p>
+                            The conferences aim to enhance skills, competencies, and collaboration while encouraging new
+                            approaches to creating inclusive, high-performing work environments. Expected outcomes
+                            include actionable strategies, increased collaboration, and innovative solutions that
+                            improve employee experiences and support organizational growth.
+                        </p>
+                        <div class="data">
+                            <a href="#services" class="btn btn-primary hire">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Image Column -->
+                <div class="col-lg-6 col-md-12">
+                    <img src="/assets/image/service-two.jpeg" class="img-fluid pic" alt="Conference Image" />
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Strategic Human Capital Conferences</h2>
+            <p class="intro-text text-center">
+                IGHCS specializes in designing and hosting Human Capital Strategic Conferences, bringing together
+                leaders, executives, and professionals to discuss, strategize, and shape the future of Human Capital
+                Management. Our conferences provide a platform for knowledge-sharing, strategic planning, and
+                networking.
+            </p>
+
+            <div class="row">
+                <!-- Service 1: Expert Speakers & Panel Discussions -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Expert Speakers & Panel Discussions</h3>
+                        <p>Learn from industry leaders and innovators as they share insights on emerging trends and
+                            strategies
+                            in Human Capital Management.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Interactive Workshops & Case Studies -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Interactive Workshops & Case Studies</h3>
+                        <p>Gain practical knowledge through hands-on workshops and real-world case studies that provide
+                            actionable
+                            solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Networking & Collaboration Opportunities -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Networking & Collaboration Opportunities</h3>
+                        <p>Connect with top professionals, build relationships, and exchange valuable insights within
+                            the industry.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Aligning Human Capital Strategies -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Aligning Human Capital Strategies</h3>
+                        <p>Develop strategies to align human capital management with business goals, fostering growth
+                            and innovation.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5: Emerging Technologies & Trends -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Emerging Technologies & Trends</h3>
+                        <p>Explore the latest technologies, trends, and challenges impacting the future of human capital
+                            management.</p>
+                    </div>
+                </div>
+
+                <!-- Service 6: Best Practices for Work Environments -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Best Practices for Work Environments</h3>
+                        <p>Discover effective ways to create engaging, inclusive, and high-performing work environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Sections -->
+            <div class="main-text">
+                <p class="text-center mt-5">IGHCS will design and host Human Capital Strategic Conferences to bring
+                    together Human Capital
+                    Leaders, Executives and Professionals to discuss, strategize, shape the present and the future of
+                    Human Capital Management.</p>
+            </div>
+            <div class="conference-details">
+                <h3>The primary purpose of these conferences include</h3>
+                <ul>
+                    <li>Knowledge Sharing</li>
+                    <li>Strategic Planning</li>
+                    <li>Networking</li>
+                    <li>Enhance HC capabilities, skills development, and competencies to drive business success</li>
+                    <li>Explore emerging trends, technologies, and challenges impacting Human Capital Management</li>
+                </ul>
+            </div>
+
+            <div class="conference-details">
+                <h3>Key Objectives :</h3>
+                <ul>
+                    <li>Align Human Capital Strategies</li>
+                    <li>Develop Human Capital professional’s skills, knowledge, and competencies</li>
+                    <li>Encourage cross-functional collaboration and knowledge sharing</li>
+                    <li>Explore new ideas, technologies, and approaches to Human Capital Management</li>
+                    <li>Share best practices for creating engaging, inclusive, and supportive work environments</li>
+                </ul>
+            </div>
+
+            <div class="conference-details">
+                <h3>Expected Outcomes :</h3>
+                <ul>
+                    <li>Actionable Strategies</li>
+                    <li>Enhanced HC Capabilities</li>
+                    <li>Increased Collaboration</li>
+                    <li>Innovative Solutions</li>
+                    <li>Improved Employee Experience</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Business Partners Section -->
+    <section class="container-fluid bs-section py-5" id="bspartner">
+        <div class="col-md-6">
+            <h1 class="bs-heading">Our Business Partners</h1>
+        </div>
+        <div class="main-slider">
+            <div class="main-slider-items">
+                <img src="ukzn_orig (1).png" alt="">
+                <img src="/assets/image/Unisa-Logo.png" alt="">
+                <img src="/assets/image/designx.png" alt="">
+                <img src="/assets/image/varsity_logo.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+                <img src="https://www.zarla.com/images/nike-logo-2400x2400-20220504.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/apple-logo-2400x2400-20220512-1.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/disney-logo-2400x2400-20220513-2.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Loon_%28company%29_logo.svg/800px-Loon_%28company%29_logo.svg.png"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Business Partners Section -->
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>27 Croton Street, Unit 9 Croton Crest, Brindhaven, Verulam, 4339</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>Juggie Moodley: +27 84 956 2500</span> <br>
+                                <!-- <span>Natasha Dadoo: +27 74 028 6936</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>ighcs@yahoo.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png"
+                                        class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>"We Deliver actionable,
+                                    objective insight to executives and their teams".</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fa-brands fa-facebook facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Conference Calendar</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget footer-widget-two">
+                            <div class="footer-widget-heading">
+                                <h3>IGHCS Services</h3>
+                            </div>
+                            <ul class="ighcs-services-link">
+                                <li><a href="#">Programme Director and Facilitation of Strategic Workshops</a></li>
+                                <li><a href="#">Strategic Conferences</a></li>
+                                <li><a href="#">Crafting of Human Capital Strategies and Implementation</a></li>
+                                <li><a href="#">Re-engineering Business Processes aligned to business needs</a></li>
+                                <li><a href="#">Change Management Services</a></li>
+                                <li><a href="#">Coaching and Mentoring</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; IGHCS 2025, All Right
+                                Reserved. Developed By<a href="https://www.rahuldawpersad.com" target="_blank">
+                                    DesignX</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Of Footer -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Load user session and show correct UI
+        window.onload = function () {
+            const user = sessionStorage.getItem('username');
+            if (user) {
+                document.getElementById('auth-section').style.display = "none"; // Hide Login/Register
+                document.getElementById('user-menu').style.display = "block"; // Show User Icon
+                document.getElementById('username-display').innerHTML = `<i class="fa-solid fa-user"></i> ${user}`;
+            } else {
+                document.getElementById('auth-section').style.display = "flex"; // Show Login/Register
+                document.getElementById('user-menu').style.display = "none"; // Hide User Icon
+            }
+        }
+
+        function toggleDropdown() {
+            document.getElementById("dropdown-menu").classList.toggle("show");
+        }
+
+        function logout() {
+            sessionStorage.removeItem('username');
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.matches('.user-icon')) {
+                let dropdown = document.getElementById("dropdown-menu");
+                if (dropdown.classList.contains("show")) {
+                    dropdown.classList.remove("show");
+                }
+            }
+        }
+
+        // function toggleSidebar() {
+        //         const sidebar = document.getElementById('sidebar');
+        //         if (sidebar.style.left === '0px') {
+        //             sidebar.style.left = '-250px';
+        //         } else {
+        //             sidebar.style.left = '0px';
+        //         }
+        //     }
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+</head>
+<body>
+  <% if (user) { %>
+    <h2>Welcome, <%= user.username %>!</h2>
+    <button onclick="window.location.href='/logout'">Logout</button>
+  <% } else { %>
+    <h2>Welcome to Our Website</h2>
+    <button onclick="window.location.href='/login'">Login</button>
+    <button onclick="window.location.href='/register'">Register</button>
+  <% } %>
+</body>
+</html>

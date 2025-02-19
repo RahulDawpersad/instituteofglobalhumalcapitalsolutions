@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    h1, p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Us</h1>
+  <p>We are a company focused on providing high-quality services and products to meet your needs. Our team is dedicated to excellence and customer satisfaction.</p>
+
+  <div id="user-info">
+    <!-- Dynamically inserted user name and logout button -->
+  </div>
+
+  <div id="auth-buttons">
+    <button onclick="window.location.href='/index.html'">Home</button>
+    <button onclick="window.location.href='/services.html'">Services</button>
+  </div>
+
+  <script>
+  // Fetch user information from sessionStorage
+  window.onload = function() {
+      const user = sessionStorage.getItem('username');
+      if (user) {
+        document.getElementById('user-info').innerHTML = `<h3>Hello, ${user}</h3><button onclick="logout()">Logout</button>`;
+      }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('username');
+    window.location.href = '/';
+  }
+  </script>
+</body>
+</html>

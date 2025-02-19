@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>Services</title>
+    <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Allura&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Parisienne&family=Satisfy&family=Zilla+Slab&display=swap"
+        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/programmedirector.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="IGHCS_LOGO_2-removebg-Transparent.png" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="hamburger" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Business Partners</a>
+            <a href="index.html">Testimonials</a>
+
+            <!-- Services Dropdown -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Services</span>
+                <div class="services-dropdown-menu">
+                    <a href="programmedirector.html">Programme Director & Facilitation of Strategic Workshops</a>
+                    <a href="strategiconference.html">Strategic Conferences</a>
+                    <a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                </div>
+            </div>
+
+            <!-- <a href="about.html">Conferences</a> -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Conference</span>
+                <div class="services-dropdown-menu">
+                    <a href="service2.html">Conference Calendar</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="auth-section" id="auth-section">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='register.html'">Sign Up</button>
+        </div>
+
+        <div class="user-menu" id="user-menu">
+            <i class="fas fa-user-circle user-icon" onclick="toggleDropdown()"></i>
+            <div class="dropdown" id="dropdown-menu">
+                <p id="username-display"></p>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Sidebar for Mobile -->
+        <div class="sidebar" id="sidebar">
+            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Business Partners</a>
+            <a href="index.html">Testimonials</a>
+            <!-- <a href="services.html">Services</a> -->
+            <!-- Services Dropdown -->
+            <div class="services-dropdown-container">
+                <span class="services-link">Services</span>
+                <div class="services-dropdown-menu">
+                    <a href="programmedirector.html">Programme Director & Facilitation of Strategic Workshops</a>
+                    <a href="strategiconference.html">Strategic Conferences</a>
+                    <a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                </div>
+            </div>
+            <div class="services-dropdown-container">
+                <span class="services-link">Conference</span>
+                <div class="services-dropdown-menu">
+                    <a href="service2.html">Conference Calendar</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <!-- -->
+    <!-- 
+    <div class="logo-container">
+        <a href="#" class="logo">
+            <img src="IGHCS_LOGO_2-removebg-Transparent.png" alt="Logo" />
+        </a>
+    </div> -->
+    <!-- <div class="auth-section show" id="desktop-auth-section">
+        <button onclick="window.location.href='login.html'" class="btn btn-link">Login</button>
+        <span>/</span>
+        <button onclick="window.location.href='register.html'" class="btn btn-link">Sign Up</button>
+    </div> -->
+    <!-- Header & Navbar Section -->
+    <!-- <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="IGHCS_LOGO_2-removebg-Transparent.png" alt="Coffee Logo" class="logo-img">
+                <h2 class="logo-text">☕ Coffee</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fa-solid fa-xmark"></button>
+
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link">Business Partners</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Conference</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                </li>
+                <li>
+                    <div class="auth-section" id="desktop-auth-section">
+                        <button onclick="window.location.href='login.html'" class="btn btn-link">Login</button>
+                        <span>/</span>
+                        <button onclick="window.location.href='register.html'" class="btn btn-link">Sign Up</button>
+                    </div>
+                </li>
+                <div class="user-menu" id="user-menu">
+                    <i class="fas fa-user-circle user-icon" onclick="toggleDropdown()"></i>
+                    <div class="dropdown" id="dropdown-menu">
+                        <div class="dropdown-header">
+                            <p id="username-display"></p>
+                        </div>
+                        <button onclick="logout()" class="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </ul>
+
+            <button id="menu-open-button" class="fa-solid fa-bars"></button>
+           
+        </nav>
+
+        
+      
+    </header> -->
+
+
+    <!-- <header class="header" id="header">
+        <nav>
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <img src="/assets/image/Blue_and_White_Modern_Company_Logo-removebg-preview.png" alt="Logo" />
+                </a>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#bspartner">Business Partners</a></li>
+                    <li class="service-dropdown">
+                        <span class="dropdown-toggle">Services</span>
+                        <ul class="service-dropdown-menu">
+                            <li><a href="programmedirector.html">Programme Director &amp; Facilitation of Strategic
+                                    Workshops</a></li>
+                            <li><a href="strategiconference.html">Strategic Conferences</a></li>
+                            <li><a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+
+
+                </ul>
+                <div class="user-menu" id="user-menu">
+                    <i class="fas fa-user-circle user-icon" onclick="toggleDropdown()"></i>
+                    <div class="dropdown" id="dropdown-menu">
+                        <div class="dropdown-header">
+                            <p id="username-display"></p>
+                        </div>
+                        <button onclick="logout()" class="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#bspartner">Business Partners</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li class="service-dropdown">
+                        <span class="dropdown-toggle">Services</span>
+                        <ul class="service-dropdown-menu">
+                            <li><a href="programmedirector.html">Programme Director &amp; Facilitation of Strategic
+                                    Workshops</a></li>
+                            <li><a href="strategiconference.html">Strategic Conferences</a></li>
+                            <li><a href="humancapitalstrategies.html">Human Capital Strategies and Implementation</a>
+                            </li>
+                            <li><a href="business-process-reengineering.html">Business Process Re-engineering</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> -->
+
+
+
+
+    <section class="about-us">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Text Column -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="text">
+                        <h2><span style="color: #0059ff;">IGHCS</span> Services</h2>
+                        <h5>Programme Director &amp; Facilitation of Strategic Workshops</h5>
+                        <p>We specialize in overseeing and directing key programs and initiatives. Our expertise
+                            ensures
+                            these programs align with your organization's vision and objectives. Additionally, we
+                            facilitate strategic workshops that guide decision-making, foster collaboration, and
+                            drive
+                            impactful results.</p>
+                        <p>By combining extensive experience in leadership and facilitation, we help your team
+                            achieve
+                            clarity in their strategic goals and develop actionable steps that ensure long-term
+                            success.
+                            Our approach is tailored to meet the unique needs of each organization, ensuring that
+                            every
+                            workshop is aligned with the specific challenges and opportunities at hand.</p>
+                        <p>We believe in the power of collaboration and open communication. Through our workshops,
+                            we
+                            create an environment where teams can share their ideas, identify common goals, and work
+                            together towards achieving them. This not only enhances the decision-making process but
+                            also
+                            empowers teams to take ownership of the strategic initiatives moving forward.</p>
+                        <div class="data">
+                            <a href="#services" class="btn btn-primary hire">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="col-lg-6 col-md-12">
+                    <img src="/assets/image/service_one.jpeg" class="img-fluid pic" alt="Conference Image" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Programme Director &amp; Facilitation of Strategic Workshops</h2>
+            <p class="intro-text text-center">
+                At IGHCS, we provide expert management and facilitation services that
+                ensure the successful execution of your organization's strategic initiatives.
+                Our approach is comprehensive, focusing on delivering impactful results
+                through effective leadership, communication, and innovation.
+            </p>
+
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Programme Director &amp; Strategic Workshops</h3>
+                        <p>We oversee and direct specific programmes and initiatives, ensuring
+                            alignment with your organization's vision and objectives. Our strategic
+                            workshops provide a space for key stakeholders to collaborate, resolve
+                            challenges, and shape the future.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Strategic Planning</h3>
+                        <p>We develop and implement strategic plans tailored to your organization's
+                            goals. Our experts guide you through setting clear, measurable objectives
+                            and ensuring resource alignment for sustained growth.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Programme Management</h3>
+                        <p>Optimizing efficiency and effectiveness, we oversee programme
+                            operations, ensuring seamless execution from budgeting to resource
+                            allocation and timeline management.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Stakeholder Management</h3>
+                        <p>We foster collaboration by ensuring transparent communication with team
+                            members, sponsors, and external partners, driving alignment towards
+                            shared objectives.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Change Management</h3>
+                        <p>Guiding organizations through transformation, we implement strategies to
+                            manage change effectively, align teams, and ensure a smooth transition.</p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Monitoring and Evaluation</h3>
+                        <p>We continuously assess programme performance, identify areas for
+                            improvement, and ensure goals are met, providing data-driven insights
+                            for informed decision-making.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Section: Facilitation of Strategic Workshops -->
+            <div class="workshop-section mt-5">
+                <h2 class="section-title text-center">Facilitation of Strategic Workshops</h2>
+                <p class="intro-text text-center">
+                    The founder of IGHCS brings exceptional communication, interpersonal, and
+                    project management skills to ensure the success of your programme.
+                    Our strategic workshops are designed to drive meaningful outcomes
+                    and actionable strategies.
+                </p>
+
+                <div class="row">
+                    <!-- Workshop 1 -->
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <h3>Workshop Design</h3>
+                            <p>We craft workshops with well-defined agendas, objectives, and activities to
+                                drive meaningful discussions and achieve targeted results.</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop 2 -->
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <h3>Stakeholder Engagement</h3>
+                            <p>Ensuring active participation from key stakeholders, we create a
+                                collaborative environment where every voice is heard and valued.</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop 3 -->
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <h3>Facilitation</h3>
+                            <p>Our expert facilitators guide discussions, manage the flow of ideas, and
+                                ensure productive and engaging workshop sessions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop 4 -->
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <h3>Content Expertise</h3>
+                            <p>We bring subject matter expertise to inform discussions, ensuring accurate
+                                and insightful contributions that align with industry best practices.</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop 5 -->
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <h3>Follow-up and Evaluation</h3>
+                            <p>Post-workshop, we track implementation, measure effectiveness, and refine
+                                strategies to maximize long-term impact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Business Partners Section -->
+    <section class="container-fluid bs-section py-5" id="bspartner">
+        <div class="col-md-6">
+            <h1 class="bs-heading">Our Business Partners</h1>
+        </div>
+        <div class="main-slider">
+            <div class="main-slider-items">
+                <img src="ukzn_orig (1).png" alt="">
+                <img src="/assets/image/Unisa-Logo.png" alt="">
+                <img src="/assets/image/designx.png" alt="">
+                <img src="/assets/image/varsity_logo.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+                <img src="https://www.zarla.com/images/nike-logo-2400x2400-20220504.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/apple-logo-2400x2400-20220512-1.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/disney-logo-2400x2400-20220513-2.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Loon_%28company%29_logo.svg/800px-Loon_%28company%29_logo.svg.png"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Business Partners Section -->
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>27 Croton Street, Unit 9 Croton Crest, Brindhaven, Verulam, 4339</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>Juggie Moodley: +27 84 956 2500</span> <br>
+                                <!-- <span>Natasha Dadoo: +27 74 028 6936</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>ighcs@yahoo.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png"
+                                        class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>"We Deliver actionable,
+                                    objective insight to executives and their teams".</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fa-brands fa-facebook facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Conference Calendar</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget footer-widget-two">
+                            <div class="footer-widget-heading">
+                                <h3>IGHCS Services</h3>
+                            </div>
+                            <ul class="ighcs-services-link">
+                                <li><a href="#">Programme Director and Facilitation of Strategic Workshops</a></li>
+                                <li><a href="#">Strategic Conferences</a></li>
+                                <li><a href="#">Crafting of Human Capital Strategies and Implementation</a></li>
+                                <li><a href="#">Re-engineering Business Processes aligned to business needs</a></li>
+                                <li><a href="#">Change Management Services</a></li>
+                                <li><a href="#">Coaching and Mentoring</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; IGHCS 2025, All Right
+                                Reserved. Developed By<a href="https://www.rahuldawpersad.com" target="_blank">
+                                    DesignX</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Of Footer -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/programme-director.js"></script>
+    <script>
+        // Load user session and show correct UI
+        window.onload = function () {
+            const user = sessionStorage.getItem('username');
+            if (user) {
+                document.getElementById('auth-section').style.display = "none"; // Hide Login/Register
+                document.getElementById('user-menu').style.display = "block"; // Show User Icon
+                document.getElementById('username-display').innerHTML = `<i class="fa-solid fa-user"></i> ${user}`;
+            } else {
+                document.getElementById('auth-section').style.display = "flex"; // Show Login/Register
+                document.getElementById('user-menu').style.display = "none"; // Hide User Icon
+            }
+        }
+
+        function toggleDropdown() {
+            document.getElementById("dropdown-menu").classList.toggle("show");
+        }
+
+        function logout() {
+            sessionStorage.removeItem('username');
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.matches('.user-icon')) {
+                let dropdown = document.getElementById("dropdown-menu");
+                if (dropdown.classList.contains("show")) {
+                    dropdown.classList.remove("show");
+                }
+            }
+        }
+
+        // function toggleSidebar() {
+        //         const sidebar = document.getElementById('sidebar');
+        //         if (sidebar.style.left === '0px') {
+        //             sidebar.style.left = '-250px';
+        //         } else {
+        //             sidebar.style.left = '0px';
+        //         }
+        //     }
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+    </script>
+</body>
+
+</html>

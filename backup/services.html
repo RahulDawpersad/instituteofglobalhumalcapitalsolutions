@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    h1, ul {
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Services</h1>
+  <ul>
+    <li>Web Development</li>
+    <li>Graphic Design</li>
+    <li>Logo Creation</li>
+    <li>Custom Merch & Designs</li>
+  </ul>
+
+  <div id="user-info">
+    <!-- Dynamically inserted user name and logout button -->
+  </div>
+
+  <div id="auth-buttons">
+    <button onclick="window.location.href='/index.html'">Home</button>
+    <button onclick="window.location.href='/about.html'">About</button>
+  </div>
+
+  <script>
+  // Fetch user information from sessionStorage
+  window.onload = function() {
+      const user = sessionStorage.getItem('username');
+      if (user) {
+        document.getElementById('user-info').innerHTML = `<h3>Hello, ${user}</h3><button onclick="logout()">Logout</button>`;
+      }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('username');
+    window.location.href = '/';
+  }
+  </script>
+</body>
+</html>
