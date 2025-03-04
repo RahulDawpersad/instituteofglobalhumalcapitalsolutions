@@ -37,9 +37,9 @@ const pool = new Pool({
 
 // Additional Routes
 // PayFast details
-const merchantId = '10033010';
-const merchantKey = '6dwmr589lfzbq';
-const verifyUrl = 'https://www.payfast.co.za/eng/query/validate';
+// const merchantId = '10033010';
+// const merchantKey = '6dwmr589lfzbq';
+// const verifyUrl = 'https://www.payfast.co.za/eng/query/validate';
 
 
 pool.connect(err => {
