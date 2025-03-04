@@ -14,12 +14,375 @@
         rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/strategic-conference.css">
     <style>
         .auth-section,
         .user-menu {
             display: none;
             /* Hide both until JS determines what to show */
+        }
+
+        /* Main Container */
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-image: url(/assets/image/ethics-workshop-bg.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-start;
+            /* Align content to the left */
+            align-items: center;
+            padding-left: 20px;
+            /* Add some padding from the left */
+        }
+
+        /* Overlay */
+        .main-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            /* Dark overlay */
+            z-index: 1;
+            /* Behind the content */
+        }
+
+        /* Content Container */
+        .container-content {
+            position: relative;
+            text-align: left;
+            /* Align text to the left */
+            z-index: 2;
+            /* In front of the overlay */
+            max-width: 700px;
+            /* Limit width of content */
+            padding: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Title Styles */
+        .container-content h1 {
+            font-size: 2.5rem;
+            /* Responsive size */
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Paragraph Styles */
+        .container-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container-content h1 {
+                font-size: 2rem;
+                /* Smaller heading on mobile */
+            }
+
+            .container-content p {
+                font-size: 0.95rem;
+                /* Smaller text on mobile */
+                /* padding: 0 15px; */
+                /* Add padding for readability */
+            }
+
+            .btn {
+                font-size: 1rem;
+                /* Smaller button text */
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container-content h1 {
+                font-size: 1.6rem;
+                /* Even smaller heading on small screens */
+            }
+
+            .container-content p {
+                font-size: 0.9rem;
+                /* Adjust text size */
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+
+
+        /* Workshop Styling */
+        .workshop-details {
+            padding: 60px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .workshop-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .workshop-info {
+            flex: 1;
+            max-width: 48%;
+        }
+
+        .workshop-image {
+            flex: 1;
+            max-width: 48%;
+            text-align: center;
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(131, 131, 131, 0.1);
+        }
+
+        .agenda,
+        .dates-fees {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(131, 131, 131, 0.1);
+        }
+
+        .agenda ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .agenda li {
+            font-size: 1.1rem;
+            padding-left: 25px;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .agenda li .icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .dates-fees h4 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .dates-fees p {
+            font-size: 1.2rem;
+        }
+
+        .dates-fees ul {
+            margin: 0 1em;
+        }
+
+        @media (max-width: 768px) {
+            .workshop-content {
+                flex-direction: column;
+            }
+
+            .workshop-info,
+            .workshop-image {
+                max-width: 100%;
+            }
+        }
+
+
+        /* Speakers Section */
+        .speakers {
+            background-color: #ffffff;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+
+        .speakers h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .speakers-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .speaker-card {
+            width: 48%;
+            background: #f9fafb;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .speaker-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .speaker-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .speaker-info .profession {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .speaker-info .topic {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* @media (max-width: 768px) {
+            .speakers-list {
+                flex-direction: column;
+            }
+
+            .speaker-card {
+                width: 100%;
+            }
+        } */
+        @media (max-width: 1090px) {
+            .speakers-list {
+                flex-direction: column;
+                justify-content: center;
+                /* Center the cards horizontally */
+                align-items: center;
+                /* Ensure the cards align in the center */
+            }
+
+            .speaker-card {
+                width: 80%;
+                /* Adjust the width to ensure cards don't take up the full width */
+            }
+        }
+
+
+
+
+        /*  */
+        /* New Section with Responsive Background */
+        .responsive-bg-section {
+            background-image: url('/assets/image/conference-events/ethics-workshop.jpg');
+            background-size: cover;
+            background-position: center;
+            /* padding: 80px 20px; */
+            height: 100vh;
+            width: 100%;
+            color: white;
+            /* White text color for contrast */
+            /* text-align: center; */
+        }
+
+        .responsive-bg-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .responsive-bg-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Background for Tablets */
+        @media (max-width: 768px) {
+            .responsive-bg-section {
+                background-image: url('/assets/image/conference-events/ethics-workshop.jpg');
+                background-size: cover;
+                background-position: center;
+                padding: 60px 20px;
+            }
+
+            .responsive-bg-section h2 {
+                font-size: 2rem;
+            }
+
+            .responsive-bg-section p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive Background for Mobile */
+        @media (max-width: 480px) {
+            .responsive-bg-section {
+                background-image: url('/assets/image/conference-events/ethics-workshop.jpg');
+                background-size: cover;
+                background-position: center;
+                padding: 50px 15px;
+            }
+
+            .responsive-bg-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .responsive-bg-section p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -105,12 +468,129 @@
         </div>
     </div>
 
-    <section class="about-us">
+
+    <div class="main-container">
+        <div class="container-content">
+            <h1>Ethics Foundation Workshop</h1>
+            <p>HR Management plays a critical role in the success of an organisation, and this role cannot be played
+                successfully unless the practitioners behave ethically themselves and energetically drive and support
+                the creation and sustenance of an ethical culture in the organisation. The building of an ethical
+                culture is one of the key corporate governance outcomes of the King IV Code of Corporate Governance for
+                South Africa.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Workshop Details -->
+    <section class="workshop-details">
+        <div class="container">
+            <h2>Workshop Details</h2>
+            <div class="workshop-content">
+                <div class="workshop-info">
+                    <div class="agenda">
+                        <h3>Agenda</h3>
+                        <ul>
+                            <li><span class="icon">✔</span> Personal Ethical Values</li>
+                            <li><span class="icon">✔</span> SABPP Code of Conduct</li>
+                            <li><span class="icon">✔</span> Ethical Competencies</li>
+                            <li><span class="icon">✔</span> Ethical Recruitment Case Study</li>
+                            <li><span class="icon">✔</span> Post-workshop Assignment</li>
+                        </ul>
+                    </div>
+                    <div class="dates-fees">
+                        <h3>2025 Dates & Fees</h3>
+                        <div class="dates">
+                            <h4>Workshop Dates:</h4>
+                            <ul>
+                                <li>28 February, 28 March</li>
+                                <li>03 April, 06 May</li>
+                                <li>05 June, 02 July</li>
+                                <li>29 August, 11 September</li>
+                                <li>10 October, 28 November</li>
+                            </ul>
+                        </div>
+                        <div class="fees">
+                            <h4>Fees:</h4>
+                            <p><strong>Member:</strong> R669.57 excl VAT</p>
+                            <p><strong>Non-Member:</strong> R770.00 excl VAT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="workshop-image">
+                    <img src="/assets/image/conference-events/ethics-workshop.jpg" alt="Workshop Image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Speakers Section -->
+    <section class="speakers">
+        <div class="container">
+            <h2>Meet Our Speakers</h2>
+            <div class="speakers-list">
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_one.jpg" alt="John Doe" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>John Doe</h3>
+                        <p class="profession">HR Specialist</p>
+                        <p class="topic">Ethical Recruitment in Modern HR</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_three.jpg" alt="Jane Smith" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>Jane Smith</h3>
+                        <p class="profession">Corporate Governance Expert</p>
+                        <p class="topic">Building an Ethical Corporate Culture</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_one.jpg" alt="John Doe" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>John Doe</h3>
+                        <p class="profession">HR Specialist</p>
+                        <p class="topic">Ethical Recruitment in Modern HR</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_one.jpg" alt="John Doe" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>John Doe</h3>
+                        <p class="profession">HR Specialist</p>
+                        <p class="topic">Ethical Recruitment in Modern HR</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_one.jpg" alt="John Doe" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>John Doe</h3>
+                        <p class="profession">HR Specialist</p>
+                        <p class="topic">Ethical Recruitment in Modern HR</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="/assets/image/speakers/speaker_one.jpg" alt="John Doe" class="speaker-img">
+                    <div class="speaker-info">
+                        <h3>John Doe</h3>
+                        <p class="profession">HR Specialist</p>
+                        <p class="topic">Ethical Recruitment in Modern HR</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- <section class="about-us">
         <div class="container">
             <div class="row align-items-center">
-
-
-                <!-- Text Column -->
                 <div class="col-lg-6 col-md-12">
                     <div class="text">
                         <h2><span style="color: #0059ff;">IGHCS</span> Services</h2>
@@ -136,8 +616,6 @@
                     </div>
                 </div>
 
-
-                <!-- Image Column -->
                 <div class="col-lg-6 col-md-12">
                     <img src="/assets/image/service-two.jpeg" class="img-fluid pic" alt="Conference Image" />
                 </div>
@@ -145,117 +623,7 @@
 
             </div>
         </div>
-    </section>
-
-    <section class="services-section" id="services">
-        <div class="container">
-            <h2 class="section-title text-center">Strategic Human Capital Conferences</h2>
-            <p class="intro-text text-center">
-                IGHCS specializes in designing and hosting Human Capital Strategic Conferences, bringing together
-                leaders, executives, and professionals to discuss, strategize, and shape the future of Human Capital
-                Management. Our conferences provide a platform for knowledge-sharing, strategic planning, and
-                networking.
-            </p>
-
-            <div class="row">
-                <!-- Service 1: Expert Speakers & Panel Discussions -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Expert Speakers & Panel Discussions</h3>
-                        <p>Learn from industry leaders and innovators as they share insights on emerging trends and
-                            strategies
-                            in Human Capital Management.</p>
-                    </div>
-                </div>
-
-                <!-- Service 2: Interactive Workshops & Case Studies -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Interactive Workshops & Case Studies</h3>
-                        <p>Gain practical knowledge through hands-on workshops and real-world case studies that provide
-                            actionable
-                            solutions.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3: Networking & Collaboration Opportunities -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Networking & Collaboration Opportunities</h3>
-                        <p>Connect with top professionals, build relationships, and exchange valuable insights within
-                            the industry.</p>
-                    </div>
-                </div>
-
-                <!-- Service 4: Aligning Human Capital Strategies -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Aligning Human Capital Strategies</h3>
-                        <p>Develop strategies to align human capital management with business goals, fostering growth
-                            and innovation.</p>
-                    </div>
-                </div>
-
-                <!-- Service 5: Emerging Technologies & Trends -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Emerging Technologies & Trends</h3>
-                        <p>Explore the latest technologies, trends, and challenges impacting the future of human capital
-                            management.</p>
-                    </div>
-                </div>
-
-                <!-- Service 6: Best Practices for Work Environments -->
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <h3>Best Practices for Work Environments</h3>
-                        <p>Discover effective ways to create engaging, inclusive, and high-performing work environments.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Sections -->
-            <div class="main-text">
-                <p class="text-center mt-5">IGHCS will design and host Human Capital Strategic Conferences to bring
-                    together Human Capital
-                    Leaders, Executives and Professionals to discuss, strategize, shape the present and the future of
-                    Human Capital Management.</p>
-            </div>
-            <div class="conference-details">
-                <h3>The primary purpose of these conferences include</h3>
-                <ul>
-                    <li>Knowledge Sharing</li>
-                    <li>Strategic Planning</li>
-                    <li>Networking</li>
-                    <li>Enhance HC capabilities, skills development, and competencies to drive business success</li>
-                    <li>Explore emerging trends, technologies, and challenges impacting Human Capital Management</li>
-                </ul>
-            </div>
-
-            <div class="conference-details">
-                <h3>Key Objectives :</h3>
-                <ul>
-                    <li>Align Human Capital Strategies</li>
-                    <li>Develop Human Capital professional’s skills, knowledge, and competencies</li>
-                    <li>Encourage cross-functional collaboration and knowledge sharing</li>
-                    <li>Explore new ideas, technologies, and approaches to Human Capital Management</li>
-                    <li>Share best practices for creating engaging, inclusive, and supportive work environments</li>
-                </ul>
-            </div>
-
-            <div class="conference-details">
-                <h3>Expected Outcomes :</h3>
-                <ul>
-                    <li>Actionable Strategies</li>
-                    <li>Enhanced HC Capabilities</li>
-                    <li>Increased Collaboration</li>
-                    <li>Innovative Solutions</li>
-                    <li>Improved Employee Experience</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    </section> -->
 
 
 

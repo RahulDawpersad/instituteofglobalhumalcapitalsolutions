@@ -22,7 +22,6 @@
         .user-menu {
             display: none;
             /* Hide both until JS determines what to show */
-
         }
     </style>
 </head>
@@ -127,7 +126,7 @@
 
 
     <!-- Conference Events -->
-    <div class="container" id="calendar">
+    <div class="container">
         <aside class="filters">
             <h2>Find your conference</h2>
             <h3>Roles</h3>
@@ -142,7 +141,7 @@
             </ul>
             <h3>Location</h3>
             <ul>
-                <li><input type="checkbox" class="filter" value="South Africa"> South Africa</li>
+                <li><input type="checkbox" class="filter" value="South Africa">South Africa</li>
             </ul>
             <h3>Membership</h3>
             <button id="nonMember" class="nonMember">Not a Member</button>
@@ -151,22 +150,13 @@
         </aside>
         <main class="conference-list">
             <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
-            data-nonmember-price="5 ZAR" data-member-price="669.57 ZAR">
-            <h4>Ethics Foundation Workshop</h4>
-            <p>3 – 4 Mar 2025</p>
-            <p>Cape Town, South Africa</p>
-            <p class="price">Price: R5</p>
-            <button class="bookEvent">Book Event</button>
-        </div>
-            <!-- <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
                 data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
                 <h4>Ethics Foundation Workshop</h4>
                 <p>3 – 4 Mar 2025</p>
                 <p>Cape Town, South Africa</p>
                 <p class="price">Price: R770</p>
                 <button class="bookEvent">Book Event</button>
-            </div> -->
-
+            </div>
             <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
                 data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
                 <h4>HR and Organisational Ethics Workshop</h4>
@@ -269,7 +259,6 @@
     <!-- Booking Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
             <h3>Register for Event</h3>
             <form id="bookingForm">
                 <div>
@@ -291,6 +280,7 @@
                 <div id="eventDetails"></div>
                 <button type="submit">Submit</button>
             </form>
+            <button id="closeModal">Close</button>
         </div>
     </div>
 
@@ -305,6 +295,176 @@
             <button id="successOk">Ok</button>
         </div>
     </div>
+
+    <!-- <div class="container">
+        <aside class="filters">
+            <h2>Find your conference</h2>
+            <h3>Roles</h3>
+            <ul>
+                <li><input type="checkbox" class="filter" value="Finance">Workshops & Seminar</li>
+                <li><input type="checkbox" class="filter" value="Human Resources">CPD Training</li>
+                <li><input type="checkbox" class="filter" value="IT Infrastructure & Operations">Networking Events</li>
+                <li><input type="checkbox" class="filter" value="Marketing"> Marketing</li>
+                <li><input type="checkbox" class="filter" value="Sales"> Sales</li>
+                <li><input type="checkbox" class="filter" value="Security & Risk Management"> Webinars & Panels
+                </li>
+            </ul>
+            <h3>Location</h3>
+            <ul>
+                <li><input type="checkbox" class="filter" value="Americas">South Africa</li>
+            </ul>
+            <h3>Membership</h3>
+            <button id="nonMember" class="nonMember">Not a Member</button>
+            <button id="member" class="member">Already a Member</button>
+        </aside>
+        <main class="conference-list">
+            <div class="conference" data-role="Security & Risk Management" data-location="Asia/Pacific and Japan"
+                data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
+                <h4>Ethics Foundation Workshop</h4>
+                <p>3 – 4 Mar 2025</p>
+                <p>Cape Town, South Africa</p>
+                <p class="price">Price: R770</p>
+                <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Security & Risk Management" data-location="Asia/Pacific and Japan"
+                data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
+                <h4>HR and Organisational Ethics Workshop</h4>
+                <p>3 – 4 Mar 2025</p>
+                <p>Sandton, South Africa</p>
+                <p class="price">Price: R770</p>
+                <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Data & Analytics" data-location="Americas"
+                data-nonmember-price="3600 ZAR" data-member-price="3000 ZAR">
+                <h4>People Practices and Governance Standards Workshop
+                </h4>
+                <p>3 – 5 Mar 2025</p>
+                <p>Durban, South Africa</p>
+                <p class="price">Price: R3600</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="3695.65 ZAR" data-member-price="3080 ZAR">
+                <h4>HR Service Delivery Best Practices Workshop</h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Durban, South Africa</p>
+                <p class="price">Price: R3695.65</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="4500 ZAR" data-member-price="3752.17 ZAR">
+                <h4>Strategic HR Business Partner
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Grapevine, TX</p>
+                <p class="price">Price: R4500</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="1050.43 ZAR" data-member-price="952.17 ZAR">
+                <h4>Employment Equity Act
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Eastern Cape, South Africa</p>
+                <p class="price">Price: R1050.43</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="3686.96 ZAR" data-member-price="3069.57 ZAR">
+                <h4>HR Strategy and Policies in a Post-Pandemic World
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Cape Town, South Africa</p>
+                <p class="price">Price: R3686.96</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="3756.52 ZAR" data-member-price="3130.43 ZAR">
+                <h4>Building Organisational Capabilities
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>ICC Area, Durban, South Africa</p>
+                <p class="price">Price: R3756.52</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="3732.17 ZAR" data-member-price="3111.30 ZAR">
+                <h4>Strategic Recruitment and Selection Workshop
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Durban, South Africa</p>
+                <p class="price">Price: R3732.17</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="2350.43 ZAR" data-member-price="1999.13 ZAR">
+                <h4>Ethics & Governance Annual Conference
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Western Cape, South Africa</p>
+                <p class="price">Price: R2350.43</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="2400 ZAR" data-member-price="2000 ZAR">
+                <h4>Learning and Development Conference
+
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Bloemfontein, South Africa</p>
+                <p class="price">Price: R2400</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="4320 ZAR" data-member-price="3600 ZAR">
+                <h4>Annual People Factor Conference
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Johannesburg, South Africa</p>
+                <p class="price">Price: R4320</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+            <div class="conference" data-role="Tech Growth & Innovation" data-location="Americas"
+                data-nonmember-price="1350 ZAR" data-member-price="1000 ZAR">
+                <h4>Labour Market Conference
+                </h4>
+                <p>10 – 11 Mar 2025</p>
+                <p>Pretoria, South Africa</p>
+                <p class="price">Price: R1350</p>
+            <button class="bookEvent">Book Event</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h3>Register for Event</h3>
+            <form id="bookingForm">
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="role">Business Role:</label>
+                    <input type="text" id="role" name="role" required>
+                </div>
+                <div id="eventDetails"></div> 
+                <button type="submit">Submit</button>
+            </form>
+            <button id="closeModal">Close</button>
+        </div>
+    </div> -->
+
+
+
 
     <!-- End of Conference Events -->
 
