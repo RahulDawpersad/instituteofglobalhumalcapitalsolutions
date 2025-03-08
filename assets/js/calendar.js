@@ -227,7 +227,7 @@ function redirectToPayment(data) {
 
         // ✅ Redirect URLs
         return_url: "http://localhost:3001/calendar.html",
-        cancel_url: "http://localhost:3001/payment-cancelled.html",
+        cancel_url: "https://ighcs-test-with-database.onrender.com/payment-cancelled.html",
         notify_url: "http://localhost:3001/payment-notification"
     });
 
