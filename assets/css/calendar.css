@@ -38,10 +38,9 @@ body {
   max-width: 150px;
   /* Limit the width of the logo */
   height: auto;
-  /* Maintain the aspect ratio */
   display: block;
-  margin-top: 1em;
 }
+
 
 /* Navbar Styles */
 .navbar {
@@ -245,7 +244,9 @@ body {
   .logo {
     margin: 0;
     padding: 0;
-    max-width: 100px;
+    width: 140px;
+    height: 140px;
+    /* max-width: 100px; */
     margin-top: 1em;
   }
 }
@@ -611,7 +612,7 @@ body {
     min-height: 280px;
     max-height: 280px;
   }
-  
+
 
   .conference h4 {
     font-size: 1.1em;
