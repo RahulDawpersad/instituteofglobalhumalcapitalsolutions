@@ -64,7 +64,7 @@ function filterConferences() {
 document.getElementById("nonMember").addEventListener("click", function () {
     document.querySelectorAll(".conference").forEach((conference, index) => {
         const pricesNonMember = [5.00, 770.00, 3600.00, 3695.65, 4500.00, 1050.43, 3686.96, 3756.52, 3732.17, 2350.43, 2400, 4320, 1350]; // Non-member prices for each conference
-        conference.querySelector(".price").innerHTML = `${pricesNonMember[index]} ZAR`;
+        conference.querySelector(".price").textContent = "Price: R" + pricesNonMember[index];
         conference.style.display = "block";
     });
 });
@@ -73,7 +73,7 @@ document.getElementById("nonMember").addEventListener("click", function () {
 document.getElementById("member").addEventListener("click", function () {
     document.querySelectorAll(".conference").forEach((conference, index) => {
         const pricesMember = [5.00, 669.57, 3000.00, 3080.00, 3752.17, 952.17, 3069.57, 3130.43, 3111.30, 1999.13, 2000, 3600, 1000]; // Member prices for each conference
-        conference.querySelector(".price").innerHTML = `${pricesMember[index]} ZAR`;
+        conference.querySelector(".price").textContent = "Price: R" + pricesMember[index];
         conference.style.display = "block";
     });
 });
@@ -91,7 +91,7 @@ document.querySelectorAll('.bookEvent').forEach((button) => {
         document.getElementById('eventDetails').innerHTML = `
             <p><strong>Event:</strong> ${eventName}</p>
             <p><strong>Date:</strong> ${eventDate}</p>
-            <p><strong>Venue:</strong> ${eventVenue}</p>
+            <p><strong>Date:</strong> ${eventVenue}</p>
             <p><strong>Price:</strong> ${price} (Member: ${memberPrice}, Non-Member: ${nonMemberPrice})</p>
         `;
 
@@ -149,21 +149,8 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
 
 
 
+// Function to send booking data to the backend and then redirect to payment gateway
 function storeBookingData(data) {
-    const successModal = document.getElementById('successModal');
-    const bookingIdDisplay = document.getElementById('bookingIdDisplay');
-    const loadingSpinner = document.querySelector('.loading-spinner');
-    const successOk = document.getElementById('successOk');
-
-    // ✅ Show modal immediately with "Processing..." text
-    bookingIdDisplay.textContent = "Processing...";
-    loadingSpinner.style.display = "inline-block";  // Show dots animation
-    successModal.style.display = 'flex';
-
-    // ✅ Hide "OK" button initially
-    successOk.style.display = 'none';
-
-    // ✅ Send booking request
     fetch('/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -173,153 +160,40 @@ function storeBookingData(data) {
         .then(result => {
             if (result.bookingId) {
                 console.log('Booking successful! Booking ID:', result.bookingId);
+                document.getElementById('bookingIdDisplay').textContent = result.bookingId;
+                document.getElementById('successModal').style.display = 'flex';
 
-                // ✅ Update Booking ID
-                bookingIdDisplay.textContent = `Your Booking ID is ${result.bookingId}`;
-                loadingSpinner.style.display = "none";  
+                document.getElementById('successOk').addEventListener('click', function redirectToPayment() {
+                    const payFastUrl = "https://www.payfast.co.za/eng/process";
+                    const merchant_id = "24208070";
+                    const merchant_key = "i3peel1sar694";
+                    const params = new URLSearchParams({
+                        merchant_id: merchant_id,
+                        merchant_key: merchant_key,
+                        amount: data.eventPrice,
+                        item_name: data.eventName,
+                        item_description: `Booking for ${data.eventName} by ${data.fullName}`,
+                        name_first: data.fullName.split(" ")[0] || "",
+                        name_last: data.fullName.split(" ").slice(1).join(" ") || "",
+                        email_address: data.email,
+                        m_payment_id: data.bookingId || "",
 
-                // ✅ Store booking details
-                localStorage.setItem('latestBookingId', result.bookingId);
-                localStorage.setItem('bookingData', JSON.stringify({
-                    bookingId: result.bookingId,
-                    eventName: data.eventName,
-                    eventPrice: data.eventPrice,
-                    fullName: data.fullName,
-                    email: data.email
-                }));
+                        // ✅ Redirect URLs for local testing
+                        return_url: "http://localhost:3001/calendar.html",
+                        cancel_url: "http://localhost:3001/payment-cancelled.html",
+                        notify_url: "http://localhost:3001/payment-notification"
+                    });
 
-                // ✅ Show "OK" button & attach event listener
-                successOk.style.display = 'block';
-                successOk.classList.add('successOk')
-                successOk.onclick = () => redirectToPayment(data);
+                    console.log("Redirecting to:", `${payFastUrl}?${params.toString()}`);
+                    window.location.href = `${payFastUrl}?${params.toString()}`;
+                });
             } else {
                 console.error('Booking failed:', result.message);
-                bookingIdDisplay.textContent = "Error!";
-                loadingSpinner.style.display = "none";
                 alert('Error processing your booking. Please try again later.');
             }
         })
         .catch(error => {
             console.error('Error saving booking:', error);
-            bookingIdDisplay.textContent = "Error!";
-            loadingSpinner.style.display = "none";
             alert('Error processing your booking. Please try again later.');
         });
 }
-
-// ✅ Function to handle payment redirection
-function redirectToPayment(data) {
-    const payFastUrl = "https://www.payfast.co.za/eng/process";
-    const merchant_id = "24208070";
-    const merchant_key = "i3peel1sar694";
-    const bookingId = localStorage.getItem('latestBookingId') || "";
-
-    const params = new URLSearchParams({
-        merchant_id: merchant_id,
-        merchant_key: merchant_key,
-        amount: data.eventPrice,
-        item_name: data.eventName,
-        item_description: `Booking for ${data.eventName} by ${data.fullName}`,
-        name_first: data.fullName.split(" ")[0] || "",
-        name_last: data.fullName.split(" ").slice(1).join(" ") || "",
-        email_address: data.email,
-        m_payment_id: bookingId,
-
-        // ✅ Redirect URLs
-        return_url: "http://localhost:3001/calendar.html",
-        cancel_url: "http://localhost:3001/payment-cancelled.html",
-        notify_url: "http://localhost:3001/payment-notification"
-    });
-
-    console.log("Redirecting to:", `${payFastUrl}?${params.toString()}`);
-    window.location.href = `${payFastUrl}?${params.toString()}`;
-}
-
-
-
-// function storeBookingData(data) {
-//     const successModal = document.getElementById('successModal');
-//     const bookingIdDisplay = document.getElementById('bookingIdDisplay');
-//     const loadingSpinner = document.querySelector('.loading-spinner');
-//     const successOk = document.getElementById('successOk');
-
-//     // ✅ Show modal immediately with "Processing..." text
-//     bookingIdDisplay.textContent = "Processing...";
-//     loadingSpinner.style.display = "inline-block";  // Show dots animation
-//     successModal.style.display = 'flex';
-
-//     // ✅ Hide "OK" button initially
-//     successOk.style.display = 'none';
-
-//     // ✅ Send booking request
-//     fetch('/book', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(data)
-//     })
-//         .then(response => response.json())
-//         .then(result => {
-//             if (result.bookingId) {
-//                 console.log('Booking successful! Booking ID:', result.bookingId);
-
-//                 // ✅ Update Booking ID
-//                 bookingIdDisplay.textContent = `Your Booking ID is ${result.bookingId}`;
-//                 loadingSpinner.style.display = "none";  
-
-//                 // ✅ Store booking details
-//                 localStorage.setItem('latestBookingId', result.bookingId);
-//                 localStorage.setItem('bookingData', JSON.stringify({
-//                     bookingId: result.bookingId,
-//                     eventName: data.eventName,
-//                     eventPrice: data.eventPrice,
-//                     fullName: data.fullName,
-//                     email: data.email
-//                 }));
-
-//                 // ✅ Show "OK" button & attach event listener
-//                 successOk.style.display = 'block';
-//                 successOk.classList.add('successOk')
-//                 successOk.onclick = () => redirectToPayment(data);
-//             } else {
-//                 console.error('Booking failed:', result.message);
-//                 bookingIdDisplay.textContent = "Error!";
-//                 loadingSpinner.style.display = "none";
-//                 alert('Error processing your booking. Please try again later.');
-//             }
-//         })
-//         .catch(error => {
-//             console.error('Error saving booking:', error);
-//             bookingIdDisplay.textContent = "Error!";
-//             loadingSpinner.style.display = "none";
-//             alert('Error processing your booking. Please try again later.');
-//         });
-// }
-
-// // ✅ Function to handle payment redirection
-// function redirectToPayment(data) {
-//     const payFastUrl = "https://www.payfast.co.za/eng/process";
-//     const merchant_id = "24208070";
-//     const merchant_key = "i3peel1sar694";
-//     const bookingId = localStorage.getItem('latestBookingId') || "";
-
-//     const params = new URLSearchParams({
-//         merchant_id: merchant_id,
-//         merchant_key: merchant_key,
-//         amount: data.eventPrice,
-//         item_name: data.eventName,
-//         item_description: `Booking for ${data.eventName} by ${data.fullName}`,
-//         name_first: data.fullName.split(" ")[0] || "",
-//         name_last: data.fullName.split(" ").slice(1).join(" ") || "",
-//         email_address: data.email,
-//         m_payment_id: bookingId,
-
-//         // ✅ Redirect URLs
-//         return_url: "http://localhost:3001/calendar.html",
-//         cancel_url: "http://localhost:3001/payment-cancelled.html",
-//         notify_url: "http://localhost:3001/payment-notification"
-//     });
-
-//     console.log("Redirecting to:", `${payFastUrl}?${params.toString()}`);
-//     window.location.href = `${payFastUrl}?${params.toString()}`;
-// }
-

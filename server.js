@@ -144,6 +144,11 @@ app.get('/calendar.html', (req, res) => {
     res.sendFile(__dirname + '/public/calendar.html')
 })
 
+// Payment Cancelled
+app.get('/payment-cancelled.html', (req, res) => {
+    res.sendFile(__dirname + '/public/payment-cancelled.html')
+})
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err);

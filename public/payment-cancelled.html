@@ -1,11 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGHCS | Payment Cancelled</title>
+    <title>Your Payment Has Been Cancelled</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            color: #003366;
+        }
+
+        .main-title {
+            font-size: 3em;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+            animation: glitch 1s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #003366;
+        }
+
+        .description {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #040404;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .retry {
+            background-color: #ff6b6b;
+            color: white;
+            border: 2px solid #ff6b6b;
+        }
+
+        .support {
+            background-color: #003366;
+            color: white;
+            border: 2px solid #003366;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: -2px 0 red, 2px 0 blue;
+            }
+
+            50% {
+                text-shadow: -2px 0 cyan, 2px 0 yellow;
+            }
+
+            100% {
+                text-shadow: -2px 0 pink, 2px 0 green;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.7em;
+            }
+
+            .subtitle {
+                font-size: 1.3em;
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .button-container {
+                display: grid;
+                place-items: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Your Payment has been cancelled</h1>
+    <div class="container">
+        <div class="content">
+            <h1 class="main-title">OOPS! Something Went Wrong.</h1>
+            <p class="subtitle">Your payment has been cancelled.</p>
+            <p class="description">It seems like there was an issue with your payment. Please try again or contact
+                support for assistance.</p>
+
+            <div class="button-container">
+                <a id="retryButton" class="button retry">Retry Payment</a>
+                <a href="contact.html" class="button support">Contact Support</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ✅ Retrieve stored booking data from localStorage
+        const bookingData = JSON.parse(localStorage.getItem('bookingData'));
+
+        if (bookingData) {
+            const payFastUrl = "https://www.payfast.co.za/eng/process";
+            const merchant_id = "24208070";
+            const merchant_key = "i3peel1sar694";
+
+            // Construct the payment URL again
+            const params = new URLSearchParams({
+                merchant_id: merchant_id,
+                merchant_key: merchant_key,
+                amount: bookingData.eventPrice,
+                item_name: bookingData.eventName,
+                item_description: `Booking for ${bookingData.eventName} by ${bookingData.fullName}`,
+                name_first: bookingData.fullName.split(" ")[0] || "",
+                name_last: bookingData.fullName.split(" ").slice(1).join(" ") || "",
+                email_address: bookingData.email,
+                m_payment_id: bookingData.bookingId || "",
+
+                return_url: "http://localhost:3001/calendar.html",
+                cancel_url: "http://localhost:3001/payment-cancelled.html",
+                notify_url: "http://localhost:3001/payment-notification"
+            });
+
+            // Update the retry button with the correct payment URL
+            document.getElementById('retryButton').href = `${payFastUrl}?${params.toString()}`;
+        } else {
+            console.error("No booking data found.");
+            document.getElementById('retryButton').style.display = 'none'; // Hide button if no data
+        }
+    </script>
 </body>
+
 </html>

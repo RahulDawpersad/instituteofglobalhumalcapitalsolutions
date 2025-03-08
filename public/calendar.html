@@ -24,6 +24,99 @@
             /* Hide both until JS determines what to show */
 
         }
+
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .loading-spinner::after {
+            content: " .";
+            animation: dots 1s steps(3, end) infinite;
+        }
+
+        @keyframes dots {
+            0% {
+                content: " .";
+            }
+
+            33% {
+                content: " ..";
+            }
+
+            66% {
+                content: " ...";
+            }
+        }
+
+
+        /* Business Slider  */
+        .bs-section {
+            background: #ffffff;
+            display: grid;
+            place-items: center;
+        }
+
+        .bs-heading {
+            color: #003366;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 20px;
+            margin: 20px 0px;
+        }
+
+        .main-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 80%;
+            overflow: hidden;
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+            backdrop-filter: blur(7.4px);
+            -webkit-backdrop-filter: blur(7.4px);
+            /* border: 1px solid rgb(255, 255, 255); */
+        }
+
+        .main-slider-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            animation: scrolling 20s linear infinite;
+
+        }
+
+        @keyframes scrolling {
+
+            0% {
+                transform: translateX(80%);
+            }
+
+            100% {
+                transform: translateX(-20%);
+            }
+        }
+
+        .main-slider-items img {
+            width: 12%;
+            margin: 20px;
+
+        }
     </style>
 </head>
 
@@ -145,19 +238,19 @@
                 <li><input type="checkbox" class="filter" value="South Africa"> South Africa</li>
             </ul>
             <h3>Membership</h3>
-            <button id="nonMember" class="nonMember">Not a Member</button>
-            <button id="member" class="member">Already a Member</button>
+            <button id="nonMember" class="nonMember btn-book">Not a Member</button>
+            <button id="member" class="member btn-book">Already a Member</button>
 
         </aside>
         <main class="conference-list">
             <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
-            data-nonmember-price="5 ZAR" data-member-price="669.57 ZAR">
-            <h4>Ethics Foundation Workshop</h4>
-            <p>3 – 4 Mar 2025</p>
-            <p>Cape Town, South Africa</p>
-            <p class="price">Price: R5</p>
-            <button class="bookEvent">Book Event</button>
-        </div>
+                data-nonmember-price="5 ZAR" data-member-price="669.57 ZAR">
+                <h4>Ethics Foundation Workshop</h4>
+                <p>3 – 4 Mar 2025</p>
+                <p class="venue">Cape Town, South Africa</p>
+                <p class="price">5 ZAR</p>
+                <button class="bookEvent">Book Event</button>
+            </div>
             <!-- <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
                 data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
                 <h4>Ethics Foundation Workshop</h4>
@@ -171,96 +264,96 @@
                 data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
                 <h4>HR and Organisational Ethics Workshop</h4>
                 <p>3 – 4 Mar 2025</p>
-                <p>Sandton, South Africa</p>
-                <p class="price">Price: R770</p>
+                <p class="venue">Sandton, South Africa</p>
+                <p class="price">770 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="CPD Training" data-location="South Africa"
                 data-nonmember-price="3600 ZAR" data-member-price="3000 ZAR">
                 <h4>People Practices and Governance Standards Workshop</h4>
                 <p>3 – 5 Mar 2025</p>
-                <p>Durban, South Africa</p>
-                <p class="price">Price: R3600</p>
+                <p class="venue">Durban, South Africa</p>
+                <p class="price">3600 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Networking Events" data-location="South Africa"
                 data-nonmember-price="3695.65 ZAR" data-member-price="3080 ZAR">
                 <h4>HR Service Delivery Best Practices Workshop</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Durban, South Africa</p>
-                <p class="price">Price: R3695.65</p>
+                <p class="venue">Durban, South Africa</p>
+                <p class="price">3695.65 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Marketing" data-location="South Africa" data-nonmember-price="4500 ZAR"
                 data-member-price="3752.17 ZAR">
                 <h4>Strategic HR Business Partner</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Grapevine, TX</p>
-                <p class="price">Price: R4500</p>
+                <p class="venue">Grapevine, TX</p>
+                <p class="price">4500 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Sales" data-location="South Africa" data-nonmember-price="1050.43 ZAR"
                 data-member-price="952.17 ZAR">
                 <h4>Employment Equity Act</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Eastern Cape, South Africa</p>
-                <p class="price">Price: R1050.43</p>
+                <p class="venue">Eastern Cape, South Africa</p>
+                <p class="price">1050.43 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Workshops & Seminar" data-location="South Africa"
                 data-nonmember-price="3686.96 ZAR" data-member-price="3069.57 ZAR">
                 <h4>HR Strategy and Policies in a Post-Pandemic World</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Cape Town, South Africa</p>
-                <p class="price">Price: R3686.96</p>
+                <p class="venue">Cape Town, South Africa</p>
+                <p class="price">3686.96 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="CPD Training" data-location="South Africa"
                 data-nonmember-price="3756.52 ZAR" data-member-price="3130.43 ZAR">
                 <h4>Building Organisational Capabilities</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>ICC Area, Durban, South Africa</p>
-                <p class="price">Price: R3756.52</p>
+                <p class="venue">ICC Area, Durban, South Africa</p>
+                <p class="price">3756.52 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Networking Events" data-location="South Africa"
                 data-nonmember-price="3732.17 ZAR" data-member-price="3111.30 ZAR">
                 <h4>Strategic Recruitment and Selection Workshop</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Durban, South Africa</p>
-                <p class="price">Price: R3732.17</p>
+                <p class="venue">Durban, South Africa</p>
+                <p class="price">3732.17 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Webinars & Panels" data-location="South Africa"
                 data-nonmember-price="2350.43 ZAR" data-member-price="1999.13 ZAR">
                 <h4>Ethics & Governance Annual Conference</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p>Western Cape, South Africa</p>
-                <p class="price">Price: R2350.43</p>
+                <p class="date">10 – 11 Mar 2025</p>
+                <p class="venue">Western Cape, South Africa</p>
+                <p class="price">2350.43 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Sales" data-location="South Africa" data-nonmember-price="2400 ZAR"
                 data-member-price="2000 ZAR">
                 <h4>Learning and Development Conference</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Bloemfontein, South Africa</p>
-                <p class="price">Price: R2400</p>
+                <p class="venue">Bloemfontein, South Africa</p>
+                <p class="price">2400 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Marketing" data-location="South Africa" data-nonmember-price="4320 ZAR"
                 data-member-price="3600 ZAR">
                 <h4>Annual People Factor Conference</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Johannesburg, South Africa</p>
-                <p class="price">Price: R4320</p>
+                <p class="venue">Johannesburg, South Africa</p>
+                <p class="price">4320 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
             <div class="conference" data-role="Workshops & Seminar" data-location="South Africa"
                 data-nonmember-price="1350 ZAR" data-member-price="1000 ZAR">
                 <h4>Labour Market Conference</h4>
                 <p>10 – 11 Mar 2025</p>
-                <p>Pretoria, South Africa</p>
-                <p class="price">Price: R1350</p>
+                <p class="venue">Pretoria, South Africa</p>
+                <p class="price">1350 ZAR</p>
                 <button class="bookEvent">Book Event</button>
             </div>
         </main>
@@ -268,6 +361,33 @@
 
     <!-- Booking Modal -->
     <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3>Book for Event</h3>
+            <form id="bookingForm">
+                <div class="input-container">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-container">
+                    <label for="role">Business Role</label>
+                    <input type="text" id="role" name="role" required>
+                </div>
+                <div id="eventDetails"></div>
+                <button type="submit" class="btn-book">🚀 Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h3>Register for Event</h3>
@@ -289,24 +409,184 @@
                     <input type="text" id="role" name="role" required>
                 </div>
                 <div id="eventDetails"></div>
-                <button type="submit">Submit</button>
+                <button type="submit">Book Now</button>
             </form>
         </div>
-    </div>
+    </div> -->
 
     <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-modal-content">
             <h3>Booking Successful!</h3>
             <p id="successMessage">
-                Your booking ID is <span id="bookingIdDisplay"></span>.
-                Please click Ok to proceed to the payment.
+                <span id="bookingIdDisplay"></span>.
+                <!-- Animated dots -->
+                <span class="loading-spinner"></span>
+                Please wait then click Ok to proceed to the payment.
             </p>
             <button id="successOk">Ok</button>
         </div>
     </div>
 
     <!-- End of Conference Events -->
+
+
+
+    <!-- Business Partners Section -->
+    <section class="container-fluid bs-section py-5" id="bspartner">
+        <div class="col-md-6">
+            <h1 class="bs-heading">Our Business Partners</h1>
+        </div>
+        <div class="main-slider">
+            <div class="main-slider-items">
+                <img src="ukzn_orig (1).png" alt="">
+                <img src="/assets/image/Unisa-Logo.png" alt="">
+                <img src="/assets/image/designx.png" alt="">
+                <img src="/assets/image/varsity_logo.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+                <img src="https://www.zarla.com/images/nike-logo-2400x2400-20220504.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/apple-logo-2400x2400-20220512-1.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://www.zarla.com/images/disney-logo-2400x2400-20220513-2.png?crop=1:1,smart&width=150&dpr=2"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Loon_%28company%29_logo.svg/800px-Loon_%28company%29_logo.svg.png"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
+                    alt="">
+                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
+                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
+                    alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Business Partners Section -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>27 Croton Street, Unit 9 Croton Crest, Brindhaven, Verulam, 4339</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>Juggie Moodley: +27 84 956 2500</span> <br>
+                                <!-- <span>Natasha Dadoo: +27 74 028 6936</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>ighcs@yahoo.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png"
+                                        class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>"We Deliver actionable,
+                                    objective insight to executives and their teams".</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fa-brands fa-facebook facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3 class="widget-header">Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Conference Calendar</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget footer-widget-two">
+                            <div class="footer-widget-heading">
+                                <h3 class="widget-header">IGHCS Services</h3>
+                            </div>
+                            <ul class="ighcs-services-link">
+                                <li><a href="#">Programme Director and Facilitation of Strategic Workshops</a></li>
+                                <li><a href="#">Strategic Conferences</a></li>
+                                <li><a href="#">Crafting of Human Capital Strategies and Implementation</a></li>
+                                <li><a href="#">Re-engineering Business Processes aligned to business needs</a></li>
+                                <li><a href="#">Change Management Services</a></li>
+                                <li><a href="#">Coaching and Mentoring</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; IGHCS 2025, All Right
+                                Reserved. Developed By<a href="https://www.rahuldawpersad.com" target="_blank">
+                                    DesignX</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Of Footer -->
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -345,14 +625,6 @@
             }
         }
 
-        // function toggleSidebar() {
-        //         const sidebar = document.getElementById('sidebar');
-        //         if (sidebar.style.left === '0px') {
-        //             sidebar.style.left = '-250px';
-        //         } else {
-        //             sidebar.style.left = '0px';
-        //         }
-        //     }
         function toggleSidebar() {
             var sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("active");
