@@ -140,102 +140,192 @@
 
 
         /* Workshop Styling */
-        .workshop-details {
-            padding: 60px 20px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            color: #007bff;
-            font-weight: bold;
-            margin-bottom: 40px;
-        }
-
-        .workshop-content {
+        .black-section-bg {
+            background-color: #fffefe;
             display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
-        .workshop-info {
-            flex: 1;
-            max-width: 48%;
+        .leftRightTextBlock {
+            width: 100%;
+            max-width: 700px;
         }
 
-        .workshop-image {
-            flex: 1;
-            max-width: 48%;
+        .heading {
+            font-size: 40px;
+            color: #0056b3;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+
+        .strapline {
+            font-size: 20px;
+            color: #000000;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .custom-para {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #4e4e4e;
+            margin-top: 30px;
+        }
+
+        .black-section-bg .strapline::after {
+            content: "";
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            background: #fff;
+            margin: 6px 10px;
+        }
+
+        .leftRightImageBlock {
+            max-width: 50%;
+            width: 55%;
+            height: 628px;
+            background: url(/assets/image/conference-events/ethics-workshop.jpg) no-repeat center center;
+            background-size: contain;
+        }
+
+
+        /* .leftRightImageBlock {
+            max-width: 50%;
+            background-size: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background: url(/assets/image/conference-events/ethics-workshop.jpg);
+            height: 628px;
+            width: 55%;
+        } */
+
+        .custom-btn {
+            background: #0056b3;
+            text-transform: uppercase;
+            padding: 27px 44px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 15px;
+            display: inline-block;
+            letter-spacing: 1px;
+            line-height: 0;
+            transition: color .4s linear;
+            position: relative;
+            z-index: 1;
+            border: 0;
+            overlfow: hidden;
+            margin: 0;
+            border-radius: 0;
+            cursor: pointer;
+            margin-bottom: 0;
             text-align: center;
         }
 
-        .workshop-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(131, 131, 131, 0.1);
-        }
-
-        .agenda,
-        .dates-fees {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(131, 131, 131, 0.1);
-        }
-
-        .agenda ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .agenda li {
-            font-size: 1.1rem;
-            padding-left: 25px;
-            position: relative;
-            margin: 10px 0;
-        }
-
-        .agenda li .icon {
-            font-size: 1.5rem;
-            color: #007bff;
+        .custom-btn:before {
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
+            width: 101%;
+            height: 101%;
+            background: #fff;
+            z-index: 1;
+            transition: transform .5s;
+            transition-timing-function: ease;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(.5, 1.6, .4, .7);
+            transform: scaleX(0);
+            border-radius: 0;
         }
 
-        .dates-fees h4 {
-            color: #007bff;
-            margin-top: 20px;
+        .custom-btn:hover::before {
+            transform: scaleX(1);
+            color: #fff !important;
+            z-index: -1;
         }
 
-        .dates-fees p {
-            font-size: 1.2rem;
+        .btn-sm:hover {
+            color: #0056b3;
+            text-decoration: none;
         }
 
-        .dates-fees ul {
-            margin: 0 1em;
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .checkmark {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-color: #0056b3;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+        }
+
+        .calendar-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background-color: transparent;
+            color: #0056b3;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+        }
+        
+        .fees{
+            font-style: oblique;
+        }
+
+        @media (max-width: 480px) {
+            .checklist-container {
+                padding: 15px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .checklist li {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 768px) {
-            .workshop-content {
-                flex-direction: column;
-            }
-
-            .workshop-info,
-            .workshop-image {
+            .leftRightImageBlock {
+                margin-top: 3em;
+                width: 100%;
                 max-width: 100%;
+                background-size: contain;
+                background-position: center top;
+                height: 340px;
             }
         }
-
 
         /* Speakers Section */
         .speakers {
@@ -477,57 +567,64 @@
                 the creation and sustenance of an ethical culture in the organisation. The building of an ethical
                 culture is one of the key corporate governance outcomes of the King IV Code of Corporate Governance for
                 South Africa.</p>
-            <a href="#" class="btn">Read More</a>
+            <a href="#rd" class="btn">Read More</a>
         </div>
     </div>
 
     <!-- Workshop Details -->
-    <section class="workshop-details">
-        <div class="container">
-            <h2>Workshop Details</h2>
-            <div class="workshop-content">
-                <div class="workshop-info">
-                    <div class="agenda">
-                        <h3>Agenda</h3>
-                        <ul>
-                            <li><span class="icon">✔</span> Personal Ethical Values</li>
-                            <li><span class="icon">✔</span> SABPP Code of Conduct</li>
-                            <li><span class="icon">✔</span> Ethical Competencies</li>
-                            <li><span class="icon">✔</span> Ethical Recruitment Case Study</li>
-                            <li><span class="icon">✔</span> Post-workshop Assignment</li>
+    <section class="black-section-bg" id="rd">
+        <div class="container-fluid">
+            <div class="row align-items-center g-0">
+                <div class="col-12 col-md-6 leftRightImageBlock">
+
+                </div>
+                <div class="col-12 col-md-6 order-2">
+                    <div class="leftRightTextBlock p-5 mr-md-auto text-start">
+                        <p class="strapline mb-0">Workshop Details</p>
+                        <h2 class="heading">Agenda</h2>
+                        <p class="custom-para para-bottom">
+                            This workshop covers key ethical principles, including the SABPP Code of Conduct, essential
+                            ethical competencies, and real-world insights through an Ethical Recruitment Case Study.
+                            Participants will also complete a post-workshop assignment to apply their learning
+                            effectively
+                        </p>
+                        <ul class="checklist">
+                            <li><span class="checkmark">✔</span> SABPP Code of Conduct</li>
+                            <li><span class="checkmark">✔</span> Ethical Competencies</li>
+                            <li><span class="checkmark">✔</span> Ethical Recruitment Case Study</li>
+                            <li><span class="checkmark">✔</span> Post-workshop Assignment</li>
                         </ul>
-                    </div>
-                    <div class="dates-fees">
-                        <h3>2025 Dates & Fees</h3>
-                        <div class="dates">
-                            <h4>Workshop Dates:</h4>
-                            <ul>
-                                <li>28 February, 28 March</li>
-                                <li>03 April, 06 May</li>
-                                <li>05 June, 02 July</li>
-                                <li>29 August, 11 September</li>
-                                <li>10 October, 28 November</li>
-                            </ul>
-                        </div>
-                        <div class="fees">
-                            <h4>Fees:</h4>
-                            <p><strong>Member:</strong> R669.57 excl VAT</p>
-                            <p><strong>Non-Member:</strong> R770.00 excl VAT</p>
-                        </div>
+                        <br>
+                        <p class="strapline mt-2">2025 Workshop Dates</p>
+                        <ul class="checklist">
+                            <li><span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span> 28 February, 28 March</li>
+                            <li><span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span> 03 April, 06 May</li>
+                            <li><span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span> 05 June, 02 July</li>
+                            <li><span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span> 29 August, 11 September</li>
+                            <li><span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span> 10 October, 28 November</li>
+                        </ul>
+                        <p class="fees">Member: R669.57 excl VAT | Non-Member: R770.00 excl VAT</p>
+
+                        <!-- <p class="custom-para para-bottom">
+                        <ul class="checklist">
+                            <li><span class="checkmark">✔</span> SABPP Code of Conduct</li>
+                            <li><span class="checkmark">✔</span> Ethical Competencies</li>
+                            <li><span class="checkmark">✔</span> Ethical Recruitment Case Study</li>
+                            <li><span class="checkmark">✔</span> Post-workshop Assignment</li>
+                        </ul>
+                        </p> -->
+                        <a href="#speakers" class="custom-btn btn-sm mt-4">View Speakers</a>
                     </div>
                 </div>
-                <div class="workshop-image">
-                    <img src="/assets/image/conference-events/ethics-workshop.jpg" alt="Workshop Image" />
-                </div>
+
             </div>
         </div>
     </section>
 
 
 
-
     <!-- Speakers Section -->
-    <section class="speakers">
+    <section class="speakers" id="speakers">
         <div class="container">
             <h2>Meet Our Speakers</h2>
             <div class="speakers-list">
