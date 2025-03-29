@@ -144,6 +144,14 @@ app.get('/calendar.html', (req, res) => {
     res.sendFile(__dirname + '/public/calendar.html')
 })
 
+app.get('/contact.html', (req, res) => {
+    res.sendFile(__dirname + '/public/contact.html')
+})
+
+app.get('/terms-and-conditions.html', (req, res) => {
+    res.sendFile(__dirname + '/public/terms-and-conditions.html')
+})
+
 // Payment Cancelled
 app.get('/payment-cancelled.html', (req, res) => {
     res.sendFile(__dirname + '/public/payment-cancelled.html')
