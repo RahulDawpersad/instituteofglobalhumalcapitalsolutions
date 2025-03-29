@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Subscribe button (for future functionality)
   document.getElementById("subscribeBtn").addEventListener("click", function () {
     // alert("Thank you for subscribing!");
-    window.location.href="https://email-subscribe-marketing.vercel.app/";
+    window.location.href="https://ighcs-test-with-database.onrender.com/contact.html";
     document.getElementById("subscribePopup").style.display = "none";
   });
 });
