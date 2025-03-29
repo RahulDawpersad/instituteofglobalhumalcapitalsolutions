@@ -119,6 +119,50 @@ app.post("/subscribe", async (req, res) => {
     }
 });
 
+
+// Subscribe Contact Form
+app.post('/api/subscribe', async (req, res) => {
+    try {
+        const { email, firstName, lastName } = req.body;
+
+        // Basic validation
+        if (!email || !firstName || !lastName) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+
+        const contactData = {
+            email,
+            attributes: {
+                FIRSTNAME: firstName,
+                LASTNAME: lastName
+            },
+            listIds: [Number(process.env.BREVO_LIST_ID)],
+            updateEnabled: true,
+            templateId: Number(process.env.BREVO_WELCOME_TEMPLATE_ID)
+        };
+
+        const response = await axios.post(
+            'https://api.brevo.com/v3/contacts',
+            contactData,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'api-key': process.env.SENDINBLUE_API_KEY
+                }
+            }
+        );
+
+        res.json({ success: true, message: 'Subscription successful' });
+    } catch (error) {
+        console.error('Brevo API error:', error.response?.data || error.message);
+        res.status(500).json({ 
+            error: 'Subscription failed',
+            details: error.response?.data || error.message
+        });
+    }
+});
+
+
 // Additional Static Pages
 app.get('/about', (req, res) => {
     res.sendFile(__dirname + '/public/about.html');
