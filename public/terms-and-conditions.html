@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGHCS - Terms and Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #2980b9;
+            --border-radius: 8px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .last-updated {
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .terms-container {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem auto;
+        }
+
+        .sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+        }
+
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            color: var(--secondary);
+            border-left: 3px solid var(--secondary);
+            padding-left: 0.5rem;
+        }
+
+        .sidebar a i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .content {
+            flex: 1;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 20px;
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2 i {
+            margin-right: 0.75rem;
+            color: var(--secondary);
+        }
+
+        .section h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .section ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--dark);
+        }
+
+        .warning-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            color: var(--dark);
+        }
+
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--success);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 83, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--success);
+            color: var(--success);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .mobile-toc-toggle {
+            display: none;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+        }
+
+        .mobile-toc-toggle:hover {
+            background-color: var(--primary);
+        }
+
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .sidebar .print-btn{
+            color: var(--light);
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--info);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .print-btn .fas{
+            color: #f9f9f9;
+        }
+
+        .print-btn:hover {
+            background-color: #1a6a9b;
+        }
+
+        /* .section-highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            transition: var(--transition);
+        } */
+
+        @media (max-width: 992px) {
+            .terms-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                display: none;
+            }
+
+            .sidebar.visible {
+                display: block;
+            }
+
+            .mobile-toc-toggle {
+                display: block;
+                margin-top: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Print styles */
+        @media print {
+            header, .sidebar, .mobile-toc-toggle, .back-to-top, .footer {
+                display: none !important;
+            }
+
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12pt;
+            }
+
+            .container {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .content {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 1.5rem;
+            }
+
+            .highlight-box, .warning-box {
+                page-break-inside: avoid;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Terms and Conditions</h1>
+            <p>Institute of Global Human Capital Solutions (IGHCS)</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Last Updated: <span id="current-date"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <button class="mobile-toc-toggle" id="mobileTocToggle">
+            <i class="fas fa-list"></i> Table of Contents
+        </button>
+
+        <div class="terms-container">
+            <aside class="sidebar" id="sidebar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search terms...">
+                </div>
+                <h3><i class="fas fa-list-ul"></i> Table of Contents</h3>
+                <ul id="tocList">
+                    <!-- Generated by JavaScript -->
+                </ul>
+                <a href="#" class="print-btn" id="printBtn">
+                    <i class="fas fa-print"></i> 
+                    Print Terms
+                </a>
+            </aside>
+
+            <main class="content">
+                <section class="section" id="introduction">
+                    <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                    <div class="section-content">
+                        <h3>1.1. About the Institute</h3>
+                        <p>The Institute of Global Human Capital Solutions (the "Institute") provides training, consulting, and research services to individuals and organizations (the "Services").</p>
+                        
+                        <h3>1.2. Governing Terms</h3>
+                        <p>These Terms and Conditions (the "Terms") govern the use of the Services and the relationship between the Institute and its clients (the "Clients").</p>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Note:</strong> By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access the Services.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="definitions">
+                    <h2><i class="fas fa-book"></i> 2. Definitions</h2>
+                    <div class="section-content">
+                        <h3>2.1. "Client"</h3>
+                        <p>Means an individual or organization that receives Services from the Institute.</p>
+                        
+                        <h3>2.2. "Services"</h3>
+                        <p>Means the training, consulting, and research services provided by the Institute.</p>
+                        
+                        <h3>2.3. "Institute"</h3>
+                        <p>Means the Institute of Global Human Capital Solutions.</p>
+                    </div>
+                </section>
+
+                <section class="section" id="use-of-services">
+                    <h2><i class="fas fa-laptop"></i> 3. Use of Services</h2>
+                    <div class="section-content">
+                        <h3>3.1. Proper Use</h3>
+                        <p>The Client agrees to use the Services only for the purposes intended and in accordance with these Terms.</p>
+                        
+                        <h3>3.2. Educational Purpose</h3>
+                        <p>The Client acknowledges that the Services are provided for general information and educational purposes only and should not be relied upon as professional advice.</p>
+                        
+                        <div class="warning-box">
+                            <p><strong>Important:</strong> The Institute does not provide legal, financial, or other professional advice through these Services. For such advice, please consult a qualified professional.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="payment-terms">
+                    <h2><i class="fas fa-credit-card"></i> 4. Payment Terms</h2>
+                    <div class="section-content">
+                        <h3>4.1. Fees</h3>
+                        <p>The Client agrees to pay the Institute the fees and expenses specified in the Service Agreement (the "Fees").</p>
+                        
+                        <h3>4.2. Payment Schedule</h3>
+                        <p>The Client shall pay the Fees within 30 days of receipt of the Institute's invoice.</p>
+                        
+                        <h3>4.3. Late Payments</h3>
+                        <p>Late payments shall be subject to a finance charge of 2% per month.</p>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Payment Methods:</strong> We accept all major credit cards, bank transfers, and other payment methods as specified in your Service Agreement.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="confidentiality">
+                    <h2><i class="fas fa-lock"></i> 5. Confidentiality</h2>
+                    <div class="section-content">
+                        <h3>5.1. Confidential Information</h3>
+                        <p>The Client acknowledges that the Services and any materials provided by the Institute (the "Materials") contain confidential and proprietary information.</p>
+                        
+                        <h3>5.2. Non-Disclosure</h3>
+                        <p>The Client agrees to maintain the confidentiality of the Materials and not disclose them to any third party without the Institute's prior written consent.</p>
+                    </div>
+                </section>
+
+                <section class="section" id="intellectual-property">
+                    <h2><i class="fas fa-copyright"></i> 6. Intellectual Property</h2>
+                    <div class="section-content">
+                        <h3>6.1. Ownership</h3>
+                        <p>The Institute retains all intellectual property rights in the Materials and the Services.</p>
+                        
+                        <h3>6.2. No Transfer of Rights</h3>
+                        <p>The Client acknowledges that it has no right, title, or interest in or to the Materials or the Services.</p>
+                        
+                        <div class="warning-box">
+                            <p><strong>Copyright Notice:</strong> All content, materials, and resources provided through our Services are protected by copyright laws and international treaties. Unauthorized reproduction or distribution is strictly prohibited.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="limitation-of-liability">
+                    <h2><i class="fas fa-balance-scale"></i> 7. Limitation of Liability</h2>
+                    <div class="section-content">
+                        <h3>7.1. Exclusion of Liability</h3>
+                        <p>The Institute shall not be liable for any damages, losses, or expenses arising from the Client's use of the Services or the Materials.</p>
+                        
+                        <h3>7.2. Liability Cap</h3>
+                        <p>The Institute's liability for any damages, losses, or expenses shall be limited to the amount of the Fees paid by the Client.</p>
+                    </div>
+                </section>
+
+                <section class="section" id="termination">
+                    <h2><i class="fas fa-ban"></i> 8. Termination</h2>
+                    <div class="section-content">
+                        <h3>8.1. Termination for Breach</h3>
+                        <p>The Institute may terminate the Service Agreement and these Terms immediately upon written notice to the Client if the Client breaches any of these Terms.</p>
+                        
+                        <h3>8.2. Payment Upon Termination</h3>
+                        <p>Upon termination, the Client shall immediately pay all outstanding Fees and expenses.</p>
+                    </div>
+                </section>
+
+                <section class="section" id="governing-law">
+                    <h2><i class="fas fa-gavel"></i> 9. Governing Law</h2>
+                    <div class="section-content">
+                        <h3>9.1. Applicable Law</h3>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of [State/Country].</p>
+                        
+                        <h3>9.2. Dispute Resolution</h3>
+                        <p>Any disputes arising out of or in connection with these Terms shall be resolved through arbitration in accordance with the rules of the [Arbitration Association].</p>
+                    </div>
+                </section>
+
+                <section class="section" id="entire-agreement">
+                    <h2><i class="fas fa-file-contract"></i> 10. Entire Agreement</h2>
+                    <div class="section-content">
+                        <h3>10.1. Complete Terms</h3>
+                        <p>These Terms constitute the entire agreement between the Institute and the Client and supersede all prior or contemporaneous agreements or understandings.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Institute of Global Human Capital Solutions</strong></p>
+            <p>Providing excellence in training, consulting, and research services</p>
+            <p><a href="#"><i class="fas fa-envelope"></i> contact@ighcs.example.com</a> | <a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></p>
+            <p>&copy; <span id="current-year"></span> IGHCS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current date
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById('current-year').textContent = now.getFullYear();
+
+            // Generate table of contents
+            const sections = document.querySelectorAll('.section');
+            const tocList = document.getElementById('tocList');
+            
+            sections.forEach(section => {
+                const id = section.id;
+                const title = section.querySelector('h2').textContent.trim();
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = title;
+                a.innerHTML = `<i class="fas fa-chevron-right"></i> ${title}`;
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile sidebar if open
+                        if (window.innerWidth <= 992) {
+                            document.getElementById('sidebar').classList.remove('visible');
+                        }
+                    }
+                });
+            });
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Mobile TOC toggle
+            const mobileTocToggle = document.getElementById('mobileTocToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            // Check screen size on load and adjust sidebar visibility
+            function checkScreenSize() {
+                if (window.innerWidth <= 992) {
+                    sidebar.classList.remove('visible');
+                    mobileTocToggle.style.display = 'block';
+                } else {
+                    sidebar.classList.add('visible');
+                    mobileTocToggle.style.display = 'none';
+                }
+            }
+            
+            // Run on initial load
+            checkScreenSize();
+            
+            // Run on window resize
+            window.addEventListener('resize', checkScreenSize);
+            
+            mobileTocToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('visible');
+            });
+
+            // Highlight active section in TOC
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        const id = section.id;
+                        const correspondingLink = document.querySelector(`.sidebar a[href="#${id}"]`);
+                        
+                        // Remove active class from all links
+                        document.querySelectorAll('.sidebar a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to corresponding link
+                        if (correspondingLink) {
+                            correspondingLink.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // Print functionality
+            const printBtn = document.getElementById('printBtn');
+            
+            printBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.print();
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                if (searchTerm.length > 2) {
+                    // Highlight matching text in content
+                    const content = document.querySelector('.content').textContent;
+                    const regex = new RegExp(searchTerm, 'gi');
+                    
+                    // Clear previous highlights
+                    document.querySelectorAll('.section-content').forEach(el => {
+                        el.innerHTML = el.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
+                    });
+                    
+                    // Apply new highlights
+                    document.querySelectorAll('.section-content').forEach(el => {
+                        el.innerHTML = el.innerHTML.replace(regex, match => 
+                            `<span class="highlight" style="background-color: yellow; color: black;">${match}</span>`
+                        );
+                    });
+                    
+                    // Show matching sections in TOC
+                    document.querySelectorAll('.sidebar a').forEach(link => {
+                        const sectionId = link.getAttribute('href').substring(1);
+                        const section = document.getElementById(sectionId);
+                        
+                        if (section && section.textContent.toLowerCase().includes(searchTerm)) {
+                            link.style.fontWeight = 'bold';
+                            link.style.color = 'var(--accent)';
+                        } else {
+                            link.style.fontWeight = '';
+                            link.style.color = '';
+                        }
+                    });
+                } else {
+                    // Clear highlights when search term is too short or empty
+                    document.querySelectorAll('.section-content').forEach(el => {
+                        el.innerHTML = el.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
+                    });
+                    
+                    document.querySelectorAll('.sidebar a').forEach(link => {
+                        link.style.fontWeight = '';
+                        link.style.color = '';
+                    });
+                }
+            });
+
+            // Section highlight on scroll
+            window.addEventListener('scroll', function() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight / 2) && (rect.bottom >= window.innerHeight / 2);
+                    
+                    if (isVisible) {
+                        section.classList.add('section-highlight');
+                    } else {
+                        section.classList.remove('section-highlight');
+                    }
+                });
+            });
+
+            // Initialize first section as active
+            if (sections.length > 0) {
+                const firstLink = document.querySelector(`.sidebar a[href="#${sections[0].id}"]`);
+                if (firstLink) {
+                    firstLink.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
