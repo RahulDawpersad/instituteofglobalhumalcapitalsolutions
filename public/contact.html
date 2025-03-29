@@ -356,9 +356,9 @@
             const commonDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'protonmail.com'];
             
             // Sendinblue/Brevo API configuration
-            const BREVO_API_KEY = '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';
-            const BREVO_LIST_ID = 9; // Your main list ID
-            const BREVO_WELCOME_TEMPLATE_ID = 7; // Your welcome template ID
+            // const BREVO_API_KEY = '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';
+            // const BREVO_LIST_ID = 9; // Your main list ID
+            // const BREVO_WELCOME_TEMPLATE_ID = 7; // Your welcome template ID
             
             // Add input event listeners for real-time validation
             document.getElementById('firstName').addEventListener('input', function() {
@@ -390,55 +390,46 @@
                 }
             });
             
-            form.addEventListener('submit', async function(e) {
+             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                
+
                 // Validate all fields
                 const firstNameValid = validateField(document.getElementById('firstName'), 'firstNameError', validateName);
                 const lastNameValid = validateField(document.getElementById('lastName'), 'lastNameError', validateName);
                 const emailValid = validateField(emailInput, 'emailError', validateEmail);
-                
+
                 if (firstNameValid && lastNameValid && emailValid) {
                     // Show loading state
                     submitBtn.disabled = true;
                     submitBtn.classList.add('loading');
-                    
+
                     try {
-                        // Prepare contact data for Brevo
-                        const contactData = {
-                            email: emailInput.value,
-                            attributes: {
-                                FIRSTNAME: document.getElementById('firstName').value,
-                                LASTNAME: document.getElementById('lastName').value
-                            },
-                            listIds: [BREVO_LIST_ID],
-                            updateEnabled: true,
-                            templateId: BREVO_WELCOME_TEMPLATE_ID // Add welcome template
-                        };
-                        
-                        // Send to Brevo API
-                        const response = await fetch('https://api.brevo.com/v3/contacts', {
+                        const response = await fetch('/api/subscribe', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'api-key': BREVO_API_KEY
                             },
-                            body: JSON.stringify(contactData)
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                firstName: document.getElementById('firstName').value,
+                                lastName: document.getElementById('lastName').value
+                            })
                         });
-                        
+
+                        const data = await response.json();
+
                         if (!response.ok) {
-                            const errorData = await response.json();
-                            throw new Error(errorData.message || 'Failed to subscribe');
+                            throw new Error(data.error || 'Subscription failed');
                         }
-                        
+
                         // Show success message
                         submittedEmail.textContent = emailInput.value;
                         form.style.display = 'none';
                         successMessage.style.display = 'block';
-                        
+
                     } catch (error) {
                         console.error('Subscription error:', error);
-                        alert('There was an error processing your subscription. Please try again later.');
+                        alert(error.message || 'There was an error processing your subscription. Please try again later.');
                     } finally {
                         submitBtn.disabled = false;
                         submitBtn.classList.remove('loading');
