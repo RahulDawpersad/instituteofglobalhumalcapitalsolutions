@@ -201,6 +201,11 @@ app.get('/payment-cancelled.html', (req, res) => {
     res.sendFile(__dirname + '/public/payment-cancelled.html')
 })
 
+// Health check endpoint
+app.get('/', (req, res) => {
+    res.status(200).json({ status: 'Server is running' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err);
@@ -208,6 +213,37 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
+    
+    // Start keep-alive only in production
+    if (process.env.NODE_ENV === 'production') {
+        startKeepAlive();
+    }
 });
+
+// Keep-alive function
+function startKeepAlive() {
+    const interval = 14 * 60 * 1000; // 14 minutes (less than Render's 15-minute timeout)
+    const url = process.env.RENDER_EXTERNAL_URL || `http://localhost:${port}`;
+    
+    // Remove any accidental "https://https://" duplicates
+    const cleanUrl = url.replace(/^(https?:\/\/)+/i, 'https://');
+    
+    console.log(`Starting keep-alive requests to ${cleanUrl} every ${interval/60000} minutes`);
+    
+    const keepAlive = async () => {
+        try {
+            const response = await axios.get(cleanUrl);
+            console.log(`Keep-alive ping successful: ${response.status}`);
+        } catch (error) {
+            console.error('Keep-alive ping failed:', error.message);
+        }
+    };
+    
+    // Initial call
+    keepAlive();
+    
+    // Set up interval
+    setInterval(keepAlive, interval);
+}
