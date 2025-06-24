@@ -7,7 +7,13 @@ const nodemailer = require('nodemailer');
 const axios = require('axios');
 
 const app = express();
+// Get port from environment or use 3000 for local development
 const port = process.env.PORT || 3000;
+// Start server with error handling
+const server = app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
 
 // Configuration - replace with your actual credentials
 const config = {
@@ -530,6 +536,17 @@ app.post('/send-post-payment-notifications', async (req, res) => {
         res.status(500).json({ success: false, message: 'Failed to send notifications' });
     }
 });
+
+// Start server
+server.on('error', (error) => {
+    if (error.code === 'EADDRINUSE') {
+        console.error(`Port ${port} is already in use`);
+    } else {
+        console.error('Server error:', error);
+    }
+    process.exit(1);
+});
+
 
 // Start server
 app.listen(port, () => {
