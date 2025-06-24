@@ -9,10 +9,6 @@ const axios = require('axios');
 const app = express();
 // Get port from environment or use 3000 for local development
 const port = process.env.PORT || 3000;
-// Start server with error handling
-const server = app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
 
 
 // Configuration - replace with your actual credentials
@@ -537,21 +533,18 @@ app.post('/send-post-payment-notifications', async (req, res) => {
     }
 });
 
-// Start server
+// Start server with error handling
+const server = app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on port ${port}`);
+});
+
 server.on('error', (error) => {
     if (error.code === 'EADDRINUSE') {
-        console.error(`Port ${port} is already in use`);
+        console.error(`Error: Port ${port} is already in use`);
     } else {
-        console.error('Server error:', error);
+        console.error('Server startup error:', error);
     }
     process.exit(1);
 });
 
-
-// Start server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
-
-// Connecting the Server.js to one or more servers
 module.exports = app;
