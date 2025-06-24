@@ -534,17 +534,17 @@ app.post('/send-post-payment-notifications', async (req, res) => {
 });
 
 // Start server with error handling
-const server = app.listen(port, '0.0.0.0', () => {
-    console.log(`Server running on port ${port}`);
-});
+// const server = app.listen(port, '0.0.0.0', () => {
+//     console.log(`Server running on port ${port}`);
+// });
 
-server.on('error', (error) => {
-    if (error.code === 'EADDRINUSE') {
-        console.error(`Error: Port ${port} is already in use`);
-    } else {
-        console.error('Server startup error:', error);
-    }
-    process.exit(1);
-});
+// server.on('error', (error) => {
+//     if (error.code === 'EADDRINUSE') {
+//         console.error(`Error: Port ${port} is already in use`);
+//     } else {
+//         console.error('Server startup error:', error);
+//     }
+//     process.exit(1);
+// });
 
 module.exports = app;
