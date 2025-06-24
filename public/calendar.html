@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Parisienne&family=Satisfy&family=Zilla+Slab&display=swap"
         rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" as="style">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="/assets/css/calendar.css">
     <style>
         .auth-section,
@@ -25,7 +25,7 @@
 
         }
 
-        .email-container {
+        /* .email-container {
             max-width: 600px;
             margin: 20px auto;
             background: #fff;
@@ -33,89 +33,12 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+        } */
 
         .logo {
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-        }
-
-        .loading-spinner::after {
-            content: " .";
-            animation: dots 1s steps(3, end) infinite;
-        }
-
-        @keyframes dots {
-            0% {
-                content: " .";
-            }
-
-            33% {
-                content: " ..";
-            }
-
-            66% {
-                content: " ...";
-            }
-        }
-
-
-        /* Business Slider  */
-        .bs-section {
-            background: #ffffff;
-            display: grid;
-            place-items: center;
-        }
-
-        .bs-heading {
-            color: #003366;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.5em;
-            padding: 20px;
-            margin: 20px 0px;
-        }
-
-        .main-slider {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 80%;
-            overflow: hidden;
-            background: rgb(255, 255, 255);
-            border-radius: 16px;
-            /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-            backdrop-filter: blur(7.4px);
-            -webkit-backdrop-filter: blur(7.4px);
-            /* border: 1px solid rgb(255, 255, 255); */
-        }
-
-        .main-slider-items {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            animation: scrolling 20s linear infinite;
-
-        }
-
-        @keyframes scrolling {
-
-            0% {
-                transform: translateX(80%);
-            }
-
-            100% {
-                transform: translateX(-20%);
-            }
-        }
-
-        .main-slider-items img {
-            width: 12%;
-            margin: 20px;
-
         }
     </style>
 </head>
@@ -181,7 +104,6 @@
             <a href="about.html">About Us</a>
             <a href="services.html">Business Partners</a>
             <a href="index.html">Testimonials</a>
-            <!-- <a href="services.html">Services</a> -->
             <!-- Services Dropdown -->
             <div class="services-dropdown-container">
                 <span class="services-link">Services</span>
@@ -202,384 +124,141 @@
     </div>
 
     <!-- Main Section -->
-    <!-- <main> -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Conference Calendar</h1>
-            <p> Engage in dynamic human capital and business conferences that are
-                strategically crafted to align <br />
-                with your professional needs and drive impactful results
-                for your organization's key initiatives.</p>
-            <a href="#calendar" class="cta-button">View Events</a>
-        </div>
 
-    </section>
-    <!-- </main> -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>IGHCS Conference Calendar</h2>
+                    <p>Engage in dynamic human capital and business conferences that are strategically crafted to align
+                        with your professional needs and drive impactful results for your organization's key
+                        initiatives.</p>
+                    <a href="#events" class="btn btn-primary">Browse Events</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="events-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Upcoming Conferences</h2>
+                    <p>Filter and find your perfect professional event</p>
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="category">Category:</label>
+                        <select id="category" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="technology">Technology</option>
+                            <option value="business">Business</option>
+                            <option value="finance">Finance</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="location">Location:</label>
+                        <select id="location" class="filter-select">
+                            <option value="all">All Locations</option>
+                            <option value="johannesburg">Johannesburg</option>
+                            <option value="cape-town">Cape Town</option>
+                            <option value="durban">Durban</option>
+                            <option value="pretoria">Pretoria</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date">Date Range:</label>
+                        <select id="date" class="filter-select">
+                            <option value="all">All Dates</option>
+                            <option value="this-month">This Month</option>
+                            <option value="next-month">Next Month</option>
+                            <option value="next-3-months">Next 3 Months</option>
+                        </select>
+                    </div>
+                    <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+                </div>
+
+                <div class="events-grid" id="eventsContainer">
+                    <!-- Events will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h2>Why Choose EliteConferences?</h2>
+                    <p>We curate only the most prestigious professional events, ensuring exceptional content, networking
+                        opportunities, and value for our attendees. Our platform simplifies the booking process while
+                        providing all the tools you need for successful event participation.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Secure Booking</h3>
+                            <p>Industry-leading security for all your transactions.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <h3>Dedicated Support</h3>
+                            <p>24/7 assistance for all your conference needs.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Corporate Solutions</h3>
+                            <p>Specialized services for group bookings.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-file-download"></i>
+                            <h3>Event Materials</h3>
+                            <p>Presentation slides and recordings available post-event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- End of Main Section -->
 
 
     <!-- Conference Events -->
-    <div class="container" id="calendar">
-        <aside class="filters">
-            <h2>Find your conference</h2>
-            <h3>Roles</h3>
-            <ul>
-                <!-- Adjusted checkbox values to match conference data (if needed) -->
-                <li><input type="checkbox" class="filter" value="Workshops & Seminar"> Workshops & Seminar</li>
-                <li><input type="checkbox" class="filter" value="CPD Training"> CPD Training</li>
-                <li><input type="checkbox" class="filter" value="Networking Events"> Networking Events</li>
-                <li><input type="checkbox" class="filter" value="Marketing"> Marketing</li>
-                <li><input type="checkbox" class="filter" value="Sales"> Sales</li>
-                <li><input type="checkbox" class="filter" value="Webinars & Panels"> Webinars & Panels</li>
-            </ul>
-            <h3>Location</h3>
-            <ul>
-                <li><input type="checkbox" class="filter" value="South Africa"> South Africa</li>
-            </ul>
-            <h3>Membership</h3>
-            <button id="nonMember" class="nonMember btn-book">Not a Member</button>
-            <button id="member" class="member btn-book">Already a Member</button>
-
-        </aside>
-        <main class="conference-list">
-            <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
-                data-nonmember-price="5 ZAR" data-member-price="669.57 ZAR">
-                <h4>Ethics Foundation Workshop</h4>
-                <p>3 – 4 Mar 2025</p>
-                <p class="venue">Cape Town, South Africa</p>
-                <p class="price">5 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <!-- <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
-                data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
-                <h4>Ethics Foundation Workshop</h4>
-                <p>3 – 4 Mar 2025</p>
-                <p>Cape Town, South Africa</p>
-                <p class="price">Price: R770</p>
-                <button class="bookEvent">Book Event</button>
-            </div> -->
-
-            <div class="conference" data-role="Webinars & Panels" data-location="Asia/Pacific and Japan"
-                data-nonmember-price="770 ZAR" data-member-price="669.57 ZAR">
-                <h4>HR and Organisational Ethics Workshop</h4>
-                <p>3 – 4 Mar 2025</p>
-                <p class="venue">Sandton, South Africa</p>
-                <p class="price">770 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="CPD Training" data-location="South Africa"
-                data-nonmember-price="3600 ZAR" data-member-price="3000 ZAR">
-                <h4>People Practices and Governance Standards Workshop</h4>
-                <p>3 – 5 Mar 2025</p>
-                <p class="venue">Durban, South Africa</p>
-                <p class="price">3600 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Networking Events" data-location="South Africa"
-                data-nonmember-price="3695.65 ZAR" data-member-price="3080 ZAR">
-                <h4>HR Service Delivery Best Practices Workshop</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Durban, South Africa</p>
-                <p class="price">3695.65 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Marketing" data-location="South Africa" data-nonmember-price="4500 ZAR"
-                data-member-price="3752.17 ZAR">
-                <h4>Strategic HR Business Partner</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Grapevine, TX</p>
-                <p class="price">4500 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Sales" data-location="South Africa" data-nonmember-price="1050.43 ZAR"
-                data-member-price="952.17 ZAR">
-                <h4>Employment Equity Act</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Eastern Cape, South Africa</p>
-                <p class="price">1050.43 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Workshops & Seminar" data-location="South Africa"
-                data-nonmember-price="3686.96 ZAR" data-member-price="3069.57 ZAR">
-                <h4>HR Strategy and Policies in a Post-Pandemic World</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Cape Town, South Africa</p>
-                <p class="price">3686.96 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="CPD Training" data-location="South Africa"
-                data-nonmember-price="3756.52 ZAR" data-member-price="3130.43 ZAR">
-                <h4>Building Organisational Capabilities</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">ICC Area, Durban, South Africa</p>
-                <p class="price">3756.52 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Networking Events" data-location="South Africa"
-                data-nonmember-price="3732.17 ZAR" data-member-price="3111.30 ZAR">
-                <h4>Strategic Recruitment and Selection Workshop</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Durban, South Africa</p>
-                <p class="price">3732.17 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Webinars & Panels" data-location="South Africa"
-                data-nonmember-price="2350.43 ZAR" data-member-price="1999.13 ZAR">
-                <h4>Ethics & Governance Annual Conference</h4>
-                <p class="date">10 – 11 Mar 2025</p>
-                <p class="venue">Western Cape, South Africa</p>
-                <p class="price">2350.43 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Sales" data-location="South Africa" data-nonmember-price="2400 ZAR"
-                data-member-price="2000 ZAR">
-                <h4>Learning and Development Conference</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Bloemfontein, South Africa</p>
-                <p class="price">2400 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Marketing" data-location="South Africa" data-nonmember-price="4320 ZAR"
-                data-member-price="3600 ZAR">
-                <h4>Annual People Factor Conference</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Johannesburg, South Africa</p>
-                <p class="price">4320 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-            <div class="conference" data-role="Workshops & Seminar" data-location="South Africa"
-                data-nonmember-price="1350 ZAR" data-member-price="1000 ZAR">
-                <h4>Labour Market Conference</h4>
-                <p>10 – 11 Mar 2025</p>
-                <p class="venue">Pretoria, South Africa</p>
-                <p class="price">1350 ZAR</p>
-                <button class="bookEvent">Book Event</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h3>Book for Event</h3>
-            <form id="bookingForm">
-                <div class="input-container">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div class="input-container">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-container">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="input-container">
-                    <label for="role">Business Role</label>
-                    <input type="text" id="role" name="role" required>
-                </div>
-                <div id="eventDetails"></div>
-                <button type="submit" class="btn-book">🚀 Book Now</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Register for Event</h3>
-            <form id="bookingForm">
-                <div>
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div>
-                    <label for="role">Business Role:</label>
-                    <input type="text" id="role" name="role" required>
-                </div>
-                <div id="eventDetails"></div>
-                <button type="submit">Book Now</button>
-            </form>
-        </div>
-    </div> -->
-
-    <!-- Success Modal -->
-    <div id="successModal" class="success-modal">
-        <div class="success-modal-content">
-            <h3>Booking Successful!</h3>
-            <p id="successMessage">
-                <span id="bookingIdDisplay"></span>.
-                <!-- Animated dots -->
-                <span class="loading-spinner"></span>
-                Please wait then click Ok to proceed to the payment.
-            </p>
-            <button id="successOk">Ok</button>
-        </div>
-    </div>
-
-    <!-- End of Conference Events -->
-
-
-
-    <!-- Business Partners Section -->
-    <section class="container-fluid bs-section py-5" id="bspartner">
-        <div class="col-md-6">
-            <h1 class="bs-heading">Our Business Partners</h1>
-        </div>
-        <div class="main-slider">
-            <div class="main-slider-items">
-                <img src="ukzn_orig (1).png" alt="">
-                <img src="/assets/image/Unisa-Logo.png" alt="">
-                <img src="/assets/image/designx.png" alt="">
-                <img src="/assets/image/varsity_logo.png" alt="">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
-                    alt="">
-                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
-                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
-                    alt="">
-                <img src="https://www.zarla.com/images/nike-logo-2400x2400-20220504.png?crop=1:1,smart&width=150&dpr=2"
-                    alt="">
-                <img src="https://www.zarla.com/images/apple-logo-2400x2400-20220512-1.png?crop=1:1,smart&width=150&dpr=2"
-                    alt="">
-                <img src="https://www.zarla.com/images/disney-logo-2400x2400-20220513-2.png?crop=1:1,smart&width=150&dpr=2"
-                    alt="">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Loon_%28company%29_logo.svg/800px-Loon_%28company%29_logo.svg.png"
-                    alt="">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png"
-                    alt="">
-                <img src="https://www.svgrepo.com/show/303123/bmw-logo.svg" alt="">
-                <img src="https://brandlogos.net/wp-content/uploads/2014/12/starbucks_coffee_company-logo_brandlogos.net_9jqys.png"
-                    alt="">
-            </div>
-        </div>
-    </section>
-
-    <!-- End of Business Partners Section -->
-
-
 
 
 
     <!-- Footer -->
-    <footer class="footer-section">
+    <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-cta pt-5 pb-5">
-                <div class="row">
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <div class="cta-text">
-                                <h4>Find us</h4>
-                                <span>27 Croton Street, Unit 9 Croton Crest, Brindhaven, Verulam, 4339</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <div class="cta-text">
-                                <h4>Call us</h4>
-                                <span>Juggie Moodley: +27 84 956 2500</span> <br>
-                                <!-- <span>Natasha Dadoo: +27 74 028 6936</span> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <div class="cta-text">
-                                <h4>Mail us</h4>
-                                <span>ighcs@yahoo.com</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IGHCS</h3>
+                    <p>Premium conference booking and management services for professionals and corporations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#events">Browse Events</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +27 12 345 6789</li>
+                        <li><i class="fas fa-envelope"></i> info@eliteconferences.co.za</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Park, Sandton, Johannesburg</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-content pt-5 pb-5">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 mb-50">
-                        <div class="footer-widget">
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="/assets/image/IGHCS_LOGO_2-removebg-Transparent.png"
-                                        class="img-fluid" alt="logo"></a>
-                            </div>
-                            <div class="footer-text">
-                                <p>"We Deliver actionable,
-                                    objective insight to executives and their teams".</p>
-                            </div>
-                            <div class="footer-social-icon">
-                                <span>Follow us</span>
-                                <a href="#"><i class="fa-brands fa-facebook facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <div class="footer-widget-heading">
-                                <h3 class="widget-header">Links</h3>
-                            </div>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Conference Calendar</a></li>
-                                <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                        <div class="footer-widget footer-widget-two">
-                            <div class="footer-widget-heading">
-                                <h3 class="widget-header">IGHCS Services</h3>
-                            </div>
-                            <ul class="ighcs-services-link">
-                                <li><a href="#">Programme Director and Facilitation of Strategic Workshops</a></li>
-                                <li><a href="#">Strategic Conferences</a></li>
-                                <li><a href="#">Crafting of Human Capital Strategies and Implementation</a></li>
-                                <li><a href="#">Re-engineering Business Processes aligned to business needs</a></li>
-                                <li><a href="#">Change Management Services</a></li>
-                                <li><a href="#">Coaching and Mentoring</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; IGHCS 2025, All Right
-                                Reserved. Developed By<a href="https://www.rahuldawpersad.com" target="_blank">
-                                    DesignX</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Terms</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Policy</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EliteConferences. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -589,7 +268,215 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Book Conference</h2>
+
+            <div class="booking-steps">
+                <div class="step active" data-step="1">1. Event Details</div>
+                <div class="step" data-step="2">2. Booking Type</div>
+                <div class="step" data-step="3">3. Payment</div>
+                <div class="step" data-step="4">4. Confirmation</div>
+            </div>
+
+            <form id="bookingForm">
+                <!-- Step 1: Event Details -->
+                <div class="form-step" id="step1">
+                    <div class="event-summary">
+                        <img id="modalEventImage" src="" alt="Event Image">
+                        <div>
+                            <h3 id="modalEventName"></h3>
+                            <p id="modalEventDate"></p>
+                            <p id="modalEventLocation"></p>
+                            <p id="modalEventPrice"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticketQuantity">Number of Tickets:</label>
+                        <input type="number" id="ticketQuantity" min="1" value="1">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary next-step" data-next="2">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Booking Type -->
+                <div class="form-step" id="step2" style="display:none;">
+                    <div class="form-group">
+                        <label>Booking Type:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="bookingType" value="individual" checked>
+                                <span class="radio-custom"></span>
+                                Individual
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="bookingType" value="company">
+                                <span class="radio-custom"></span>
+                                Company
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="individualFields">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+
+                    <div id="companyFields" style="display:none;">
+                        <div class="form-group">
+                            <label for="companyName">Company Name:</label>
+                            <input type="text" id="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyEmail">Company Email:</label>
+                            <input type="email" id="companyEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyPhone">Company Phone:</label>
+                            <input type="tel" id="companyPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="vatNumber">VAT Number (if applicable):</label>
+                            <input type="text" id="vatNumber" name="vatNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="delegateCount">Number of Delegates:</label>
+                            <input type="number" id="delegateCount" min="1" value="1">
+                        </div>
+                        <!-- Add this to the company fields section -->
+                        <div class="form-group">
+                            <label>Bulk Add Delegates:</label>
+                            <div class="bulk-upload">
+                                <input type="file" id="delegateFile" accept=".csv,.xlsx" style="display: none;">
+                                <button type="button" id="uploadDelegateBtn" class="btn btn-secondary">
+                                    <i class="fas fa-file-upload"></i> Upload CSV/Excel
+                                </button>
+                                <a href="#" id="downloadTemplate" class="btn btn-text">
+                                    <i class="fas fa-file-download"></i> Download Template
+                                </a>
+                                <div id="uploadStatus"></div>
+                            </div>
+                        </div>
+                        <div id="delegatesContainer">
+                            <!-- Delegates will be added here dynamically -->
+
+
+                        </div>
+                        <!-- Move pagination controls here -->
+                        <div class="delegates-pagination">
+                            <button id="prevPage" class="btn btn-secondary" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span id="pageInfo">Page 1 of 1</span>
+                            <button id="nextPage" class="btn btn-secondary">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <button type="button" id="addDelegateBtn" class="btn btn-secondary">Add Delegate</button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary prev-step" data-prev="1">Back</button>
+                        <button type="button" class="btn btn-primary next-step" data-next="3">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="form-step" id="step3" style="display:none;">
+                    <div class="payment-container">
+                        <div class="payment-summary">
+                            <h3 class="summary-title">Order Summary</h3>
+                            <div class="summary-content">
+                                <div class="summary-item">
+                                    <span class="summary-label">Event:</span>
+                                    <span class="summary-value" id="summaryEventName"></span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Tickets:</span>
+                                    <span class="summary-value" id="summaryTicketCount"></span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Subtotal:</span>
+                                    <span class="summary-value" id="summarySubtotal"></span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">VAT (15%):</span>
+                                    <span class="summary-value" id="summaryVAT"></span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-item total">
+                                    <span class="summary-label">Total:</span>
+                                    <span class="summary-value" id="summaryTotal"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-section">
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="yoco-card" checked>
+                                    <div class="payment-card">
+                                        <div class="payment-card-header">
+                                            <span class="payment-icon"><i class="fab fa-cc-visa"></i> <i
+                                                    class="fab fa-cc-mastercard"></i></span>
+                                            <span class="payment-radio"></span>
+                                        </div>
+                                        <span class="payment-label">Credit/Debit Card (Yoco)</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step" data-prev="2">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary" id="proceedToPayment">
+                                    Complete Payment <i class="fas fa-lock"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="form-step" id="step4" style="display:none;">
+                        <div class="confirmation-message">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Booking Confirmed!</h3>
+                            <p>Thank you for your booking. A confirmation has been sent to your email.</p>
+                            <div class="confirmation-details">
+                                <p><strong>Booking Reference:</strong> <span id="bookingReference"></span></p>
+                                <p><strong>Event:</strong> <span id="confirmationEventName"></span></p>
+                                <p><strong>Date:</strong> <span id="confirmationEventDate"></span></p>
+                                <p><strong>Total Paid:</strong> <span id="confirmationTotal"></span></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="closeModalBtn">Done</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
     <script src="/assets/js/calendar.js"></script>
     <script>
         // Load user session and show correct UI
@@ -637,22 +524,37 @@
         }
 
         const urlParams = new URLSearchParams(window.location.search);
-        const eventName = urlParams.get('event');
+        // Close menu when resizing to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                body.classList.remove('no-scroll');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        // const eventName = urlParams.get('event');
 
-        const events = `${JSON.stringify(events)}`; // Embed events list from main JS
+        // const events = `${JSON.stringify(events)}`; // Embed events list from main JS
 
-        const event = events.find(e => e.name === eventName);
+        // const event = events.find(e => e.name === eventName);
 
-        if (event) {
-            document.getElementById('event-name').textContent = event.name;
-            document.getElementById('event-dates').textContent = event.dates.join(', ');
-            document.getElementById('event-description').textContent = event.description;
-            document.getElementById('event-fee').textContent = event.feeNonMember.toFixed(2);
-        } else {
-            document.querySelector('.event-details').innerHTML = '<p>Event not found.</p>';
-        }
+        // if (event) {
+        //     document.getElementById('event-name').textContent = event.name;
+        //     document.getElementById('event-dates').textContent = event.dates.join(', ');
+        //     document.getElementById('event-description').textContent = event.description;
+        //     document.getElementById('event-fee').textContent = event.feeNonMember.toFixed(2);
+        // } else {
+        //     document.querySelector('.event-details').innerHTML = '<p>Event not found.</p>';
+        // }
 
     </script>
+    <!-- Add these to your head section -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="https://sdk.brevo.com/plugins/brevo-sdk.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </body>
 
 </html>
